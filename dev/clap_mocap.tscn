@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccwb1fck1lbal"]
+
+[ext_resource type="Script" path="res://dev/clap_mocap.gd" id="1_w5p1m"]
+[ext_resource type="PackedScene" uid="uid://d1ooqlaa8rm8o" path="res://controls.tscn" id="3_htex5"]
+[ext_resource type="PackedScene" uid="uid://pwxo8l716car" path="res://dev/SceneLoader.glb" id="3_kp8kf"]
+
+[node name="clap_mocap" type="Node3D"]
+script = ExtResource("1_w5p1m")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Controls" parent="." instance=ExtResource("3_htex5")]
+
+[node name="SceneLoader" parent="." instance=ExtResource("3_kp8kf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.160649, -1.31848, 0.284334)
