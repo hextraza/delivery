@@ -6,7 +6,7 @@
 [node name="World" type="Node3D"]
 
 [node name="chair" parent="." instance=ExtResource("1_34yl6")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.26709, 0, 1.80684)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26709, 0.451584, 1.80684)
 
 [node name="auditorium" parent="." instance=ExtResource("2_n1pw5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32244, 0.989128, -3.13994)
