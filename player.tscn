@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bky8v4euitjqj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_g7j8t"]
-[ext_resource type="PackedScene" uid="uid://d1ooqlaa8rm8o" path="res://controls.tscn" id="2_k3v4b"]
+[ext_resource type="PackedScene" path="res://controls.tscn" id="2_k3v4b"]
 [ext_resource type="Curve" uid="uid://bmgktxnjvfuox" path="res://player_clap_curve.tres" id="2_x34nn"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_khncb"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="1_nr7sw"]
+[ext_resource type="PackedScene" uid="uid://iambhn076v8a" path="res://beak.glb" id="2_3m5d8"]
+
+[node name="Beak" type="Node3D"]
+
+[node name="chair" parent="." instance=ExtResource("1_nr7sw")]
+
+[node name="beak" parent="." instance=ExtResource("2_3m5d8")]
