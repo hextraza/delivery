@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnp58etxhih31"]
+
+[ext_resource type="Script" path="res://dev/clap_test.gd" id="1_vcvib"]
+[ext_resource type="PackedScene" uid="uid://d1ooqlaa8rm8o" path="res://controls.tscn" id="2_lc4xc"]
+
+[node name="clap_test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vcvib")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.6
+offset_left = 0.199982
+offset_top = -0.200012
+offset_right = -0.200012
+offset_bottom = 0.199982
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Controls" parent="." instance=ExtResource("2_lc4xc")]
