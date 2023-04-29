@@ -25,7 +25,7 @@ edge_fade = 0.214354
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0677462, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.34202, 0.939693, 0, 0.939693, -0.34202, -1, -1.49502e-08, -4.10753e-08, 0, 1.028, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.633963, 3.40094, 8.62979)
 fov = 90.0
 
 [node name="auditorium" parent="." instance=ExtResource("2_n1pw5")]
@@ -37,75 +37,1332 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.369
 [node name="speaker" parent="." instance=ExtResource("4_cpa6b")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.445459, 3.51181, -4.59491)
 
-[node name="crowd" type="Node3D" parent="."]
+[node name="crowd spawn points" type="Node3D" parent="."]
 script = ExtResource("4_3ygib")
 
-[node name="1" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 1.626)
+[node name="1" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 1.5)
 
-[node name="2" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 1.626)
+[node name="2" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 1.5)
 
-[node name="3" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 1.626)
+[node name="3" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 1.5)
 
-[node name="4" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 1.626)
+[node name="4" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 1.5)
 
-[node name="5" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 1.626)
+[node name="5" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 1.5)
 
-[node name="6" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 1.626)
+[node name="6" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 1.5)
 
-[node name="7" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 1.626)
+[node name="7" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 1.5)
 
-[node name="8" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 1.626)
+[node name="8" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 1.5)
 
-[node name="9" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 1.626)
+[node name="9" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 1.5)
 
-[node name="10" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 1.626)
+[node name="10" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 1.5)
 
-[node name="11" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 1.626)
+[node name="11" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 1.5)
 
-[node name="12" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 1.626)
+[node name="12" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 1.5)
 
-[node name="13" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 1.626)
+[node name="13" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 1.5)
 
-[node name="14" type="Node3D" parent="crowd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 1.626)
+[node name="14" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 1.5)
+
+[node name="15" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 1.5)
+
+[node name="16" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 1.5)
+
+[node name="17" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 1.5)
+
+[node name="18" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 1.5)
+
+[node name="19" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 1.5)
+
+[node name="20" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 1.5)
+
+[node name="21" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 1.5)
+
+[node name="22" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 1.5)
+
+[node name="23" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 1.5)
+
+[node name="24" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 1.5)
+
+[node name="25" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 1.5)
+
+[node name="26" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 1.5)
+
+[node name="27" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 1.5)
+
+[node name="28" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 2.5)
+
+[node name="29" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 2.5)
+
+[node name="30" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 2.5)
+
+[node name="31" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 2.5)
+
+[node name="32" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 2.5)
+
+[node name="33" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 2.5)
+
+[node name="34" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 2.5)
+
+[node name="35" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 2.5)
+
+[node name="36" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 2.5)
+
+[node name="37" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 2.5)
+
+[node name="38" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 2.5)
+
+[node name="39" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 2.5)
+
+[node name="40" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 2.5)
+
+[node name="41" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 2.5)
+
+[node name="42" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 2.5)
+
+[node name="43" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 2.5)
+
+[node name="44" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 2.5)
+
+[node name="45" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 2.5)
+
+[node name="46" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 2.5)
+
+[node name="47" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 2.5)
+
+[node name="48" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 2.5)
+
+[node name="49" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 2.5)
+
+[node name="50" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 2.5)
+
+[node name="51" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 2.5)
+
+[node name="52" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 2.5)
+
+[node name="53" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 2.5)
+
+[node name="54" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 2.5)
+
+[node name="55" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 3.5)
+
+[node name="56" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 3.5)
+
+[node name="57" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 3.5)
+
+[node name="58" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 3.5)
+
+[node name="59" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 3.5)
+
+[node name="60" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 3.5)
+
+[node name="61" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 3.5)
+
+[node name="62" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 3.5)
+
+[node name="63" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 3.5)
+
+[node name="64" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 3.5)
+
+[node name="65" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 3.5)
+
+[node name="66" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 3.5)
+
+[node name="67" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 3.5)
+
+[node name="68" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 3.5)
+
+[node name="69" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 3.5)
+
+[node name="70" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 3.5)
+
+[node name="71" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 3.5)
+
+[node name="72" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 3.5)
+
+[node name="73" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 3.5)
+
+[node name="74" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 3.5)
+
+[node name="75" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 3.5)
+
+[node name="76" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 3.5)
+
+[node name="77" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 3.5)
+
+[node name="78" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 3.5)
+
+[node name="79" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 3.5)
+
+[node name="80" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 3.5)
+
+[node name="81" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 3.5)
+
+[node name="82" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 4.5)
+
+[node name="83" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 4.5)
+
+[node name="84" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 4.5)
+
+[node name="85" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 4.5)
+
+[node name="86" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 4.5)
+
+[node name="87" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 4.5)
+
+[node name="88" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 4.5)
+
+[node name="89" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 4.5)
+
+[node name="90" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 4.5)
+
+[node name="91" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 4.5)
+
+[node name="92" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 4.5)
+
+[node name="93" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 4.5)
+
+[node name="94" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 4.5)
+
+[node name="95" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 4.5)
+
+[node name="96" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 4.5)
+
+[node name="97" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 4.5)
+
+[node name="98" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 4.5)
+
+[node name="99" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 4.5)
+
+[node name="100" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 4.5)
+
+[node name="101" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 4.5)
+
+[node name="102" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 4.5)
+
+[node name="103" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 4.5)
+
+[node name="104" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 4.5)
+
+[node name="105" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 4.5)
+
+[node name="106" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 4.5)
+
+[node name="107" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 4.5)
+
+[node name="108" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 4.5)
+
+[node name="109" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 5.5)
+
+[node name="110" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 5.5)
+
+[node name="111" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 5.5)
+
+[node name="112" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 5.5)
+
+[node name="113" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 5.5)
+
+[node name="114" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 5.5)
+
+[node name="115" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 5.5)
+
+[node name="116" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 5.5)
+
+[node name="117" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 5.5)
+
+[node name="118" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 5.5)
+
+[node name="119" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 5.5)
+
+[node name="120" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 5.5)
+
+[node name="121" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 5.5)
+
+[node name="122" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 5.5)
+
+[node name="123" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 5.5)
+
+[node name="124" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 5.5)
+
+[node name="125" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 5.5)
+
+[node name="126" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 5.5)
+
+[node name="127" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 5.5)
+
+[node name="128" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 5.5)
+
+[node name="129" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 5.5)
+
+[node name="130" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 5.5)
+
+[node name="131" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 5.5)
+
+[node name="132" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 5.5)
+
+[node name="133" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 5.5)
+
+[node name="134" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 5.5)
+
+[node name="135" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 5.5)
+
+[node name="136" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 6.5)
+
+[node name="137" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 6.5)
+
+[node name="138" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 6.5)
+
+[node name="139" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 6.5)
+
+[node name="140" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 6.5)
+
+[node name="141" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 6.5)
+
+[node name="142" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 6.5)
+
+[node name="143" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 6.5)
+
+[node name="144" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 6.5)
+
+[node name="145" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 6.5)
+
+[node name="146" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 6.5)
+
+[node name="147" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 6.5)
+
+[node name="148" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 6.5)
+
+[node name="149" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 6.5)
+
+[node name="150" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 6.5)
+
+[node name="151" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 6.5)
+
+[node name="152" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 6.5)
+
+[node name="153" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 6.5)
+
+[node name="154" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 6.5)
+
+[node name="155" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 6.5)
+
+[node name="156" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 6.5)
+
+[node name="157" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 6.5)
+
+[node name="158" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 6.5)
+
+[node name="159" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 6.5)
+
+[node name="160" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 6.5)
+
+[node name="161" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 6.5)
+
+[node name="162" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 6.5)
+
+[node name="163" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 7.5)
+
+[node name="164" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 7.5)
+
+[node name="165" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 7.5)
+
+[node name="166" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 7.5)
+
+[node name="167" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 7.5)
+
+[node name="168" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 7.5)
+
+[node name="169" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 7.5)
+
+[node name="170" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 7.5)
+
+[node name="171" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 7.5)
+
+[node name="172" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 7.5)
+
+[node name="173" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 7.5)
+
+[node name="174" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 7.5)
+
+[node name="175" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 7.5)
+
+[node name="176" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 7.5)
+
+[node name="177" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 7.5)
+
+[node name="178" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 7.5)
+
+[node name="179" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 7.5)
+
+[node name="180" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 7.5)
+
+[node name="181" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 7.5)
+
+[node name="182" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 7.5)
+
+[node name="183" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 7.5)
+
+[node name="184" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 7.5)
+
+[node name="185" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 7.5)
+
+[node name="186" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 7.5)
+
+[node name="187" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 7.5)
+
+[node name="188" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 7.5)
+
+[node name="189" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 7.5)
+
+[node name="190" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 8.5)
+
+[node name="191" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 8.5)
+
+[node name="192" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 8.5)
+
+[node name="193" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 8.5)
+
+[node name="194" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 8.5)
+
+[node name="195" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 8.5)
+
+[node name="196" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 8.5)
+
+[node name="197" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 8.5)
+
+[node name="198" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 8.5)
+
+[node name="199" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 8.5)
+
+[node name="200" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 8.5)
+
+[node name="201" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 8.5)
+
+[node name="202" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 8.5)
+
+[node name="203" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 8.5)
+
+[node name="204" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 8.5)
+
+[node name="205" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 8.5)
+
+[node name="206" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 8.5)
+
+[node name="207" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 8.5)
+
+[node name="208" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 8.5)
+
+[node name="209" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 8.5)
+
+[node name="210" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 8.5)
+
+[node name="211" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 8.5)
+
+[node name="212" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 8.5)
+
+[node name="213" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 8.5)
+
+[node name="214" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 8.5)
+
+[node name="215" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 8.5)
+
+[node name="216" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 8.5)
+
+[node name="217" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 9.5)
+
+[node name="218" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 9.5)
+
+[node name="219" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 9.5)
+
+[node name="220" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 9.5)
+
+[node name="221" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 9.5)
+
+[node name="222" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 9.5)
+
+[node name="223" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 9.5)
+
+[node name="224" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 9.5)
+
+[node name="225" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 9.5)
+
+[node name="226" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 9.5)
+
+[node name="227" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 9.5)
+
+[node name="228" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 9.5)
+
+[node name="229" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 9.5)
+
+[node name="230" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 9.5)
+
+[node name="231" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 9.5)
+
+[node name="232" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 9.5)
+
+[node name="233" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 9.5)
+
+[node name="234" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 9.5)
+
+[node name="235" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 9.5)
+
+[node name="236" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 9.5)
+
+[node name="237" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 9.5)
+
+[node name="238" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 9.5)
+
+[node name="239" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 9.5)
+
+[node name="240" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 9.5)
+
+[node name="241" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 9.5)
+
+[node name="242" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 9.5)
+
+[node name="243" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 9.5)
+
+[node name="244" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 10.5)
+
+[node name="245" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 10.5)
+
+[node name="246" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 10.5)
+
+[node name="247" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 10.5)
+
+[node name="248" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 10.5)
+
+[node name="249" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 10.5)
+
+[node name="250" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 10.5)
+
+[node name="251" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 10.5)
+
+[node name="252" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 10.5)
+
+[node name="253" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 10.5)
+
+[node name="254" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 10.5)
+
+[node name="255" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 10.5)
+
+[node name="256" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 10.5)
+
+[node name="257" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 10.5)
+
+[node name="258" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 10.5)
+
+[node name="259" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 10.5)
+
+[node name="260" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 10.5)
+
+[node name="261" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 10.5)
+
+[node name="262" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 10.5)
+
+[node name="263" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 10.5)
+
+[node name="264" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 10.5)
+
+[node name="265" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 10.5)
+
+[node name="266" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 10.5)
+
+[node name="267" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 10.5)
+
+[node name="268" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 10.5)
+
+[node name="269" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 10.5)
+
+[node name="270" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 10.5)
+
+[node name="271" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 11.5)
+
+[node name="272" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 11.5)
+
+[node name="273" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 11.5)
+
+[node name="274" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 11.5)
+
+[node name="275" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 11.5)
+
+[node name="276" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 11.5)
+
+[node name="277" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 11.5)
+
+[node name="278" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 11.5)
+
+[node name="279" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 11.5)
+
+[node name="280" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 11.5)
+
+[node name="281" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 11.5)
+
+[node name="282" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 11.5)
+
+[node name="283" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 11.5)
+
+[node name="284" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 11.5)
+
+[node name="285" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 11.5)
+
+[node name="286" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 11.5)
+
+[node name="287" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 11.5)
+
+[node name="288" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 11.5)
+
+[node name="289" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 11.5)
+
+[node name="290" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 11.5)
+
+[node name="291" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 11.5)
+
+[node name="292" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 11.5)
+
+[node name="293" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 11.5)
+
+[node name="294" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 11.5)
+
+[node name="295" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 11.5)
+
+[node name="296" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 11.5)
+
+[node name="297" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 11.5)
+
+[node name="298" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 12.5)
+
+[node name="299" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 12.5)
+
+[node name="300" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 12.5)
+
+[node name="301" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 12.5)
+
+[node name="302" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 12.5)
+
+[node name="303" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 12.5)
+
+[node name="304" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 12.5)
+
+[node name="305" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 12.5)
+
+[node name="306" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 12.5)
+
+[node name="307" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 12.5)
+
+[node name="308" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 12.5)
+
+[node name="309" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 12.5)
+
+[node name="310" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 12.5)
+
+[node name="311" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 12.5)
+
+[node name="312" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 12.5)
+
+[node name="313" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 12.5)
+
+[node name="314" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 12.5)
+
+[node name="315" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 12.5)
+
+[node name="316" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 12.5)
+
+[node name="317" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 12.5)
+
+[node name="318" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 12.5)
+
+[node name="319" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 12.5)
+
+[node name="320" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 12.5)
+
+[node name="321" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 12.5)
+
+[node name="322" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 12.5)
+
+[node name="323" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 12.5)
+
+[node name="324" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 12.5)
+
+[node name="325" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 13.5)
+
+[node name="326" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 13.5)
+
+[node name="327" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 13.5)
+
+[node name="328" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 13.5)
+
+[node name="329" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 13.5)
+
+[node name="330" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 13.5)
+
+[node name="331" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 13.5)
+
+[node name="332" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 13.5)
+
+[node name="333" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 13.5)
+
+[node name="334" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 13.5)
+
+[node name="335" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 13.5)
+
+[node name="336" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 13.5)
+
+[node name="337" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 13.5)
+
+[node name="338" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 13.5)
+
+[node name="339" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 13.5)
+
+[node name="340" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 13.5)
+
+[node name="341" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 13.5)
+
+[node name="342" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 13.5)
+
+[node name="343" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 13.5)
+
+[node name="344" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 13.5)
+
+[node name="345" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 13.5)
+
+[node name="346" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 13.5)
+
+[node name="347" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 13.5)
+
+[node name="348" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 13.5)
+
+[node name="349" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 13.5)
+
+[node name="350" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 13.5)
+
+[node name="351" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 13.5)
+
+[node name="352" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 14.5)
+
+[node name="353" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 14.5)
+
+[node name="354" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 14.5)
+
+[node name="355" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 14.5)
+
+[node name="356" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 14.5)
+
+[node name="357" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 14.5)
+
+[node name="358" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 14.5)
+
+[node name="359" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 14.5)
+
+[node name="360" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 14.5)
+
+[node name="361" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 14.5)
+
+[node name="362" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 14.5)
+
+[node name="363" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 14.5)
+
+[node name="364" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 14.5)
+
+[node name="365" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 14.5)
+
+[node name="366" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 14.5)
+
+[node name="367" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 14.5)
+
+[node name="368" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 14.5)
+
+[node name="369" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 14.5)
+
+[node name="370" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 14.5)
+
+[node name="371" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 14.5)
+
+[node name="372" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 14.5)
+
+[node name="373" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 14.5)
+
+[node name="374" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 14.5)
+
+[node name="375" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 14.5)
+
+[node name="376" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 14.5)
+
+[node name="377" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 14.5)
+
+[node name="378" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 14.5)
+
+[node name="379" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 15.5)
+
+[node name="380" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 15.5)
+
+[node name="381" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 15.5)
+
+[node name="382" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 15.5)
+
+[node name="383" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 15.5)
+
+[node name="384" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 15.5)
+
+[node name="385" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 15.5)
+
+[node name="386" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 15.5)
+
+[node name="387" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 15.5)
+
+[node name="388" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 15.5)
+
+[node name="389" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 15.5)
+
+[node name="390" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 15.5)
+
+[node name="391" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 15.5)
+
+[node name="392" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 15.5)
+
+[node name="393" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 15.5)
+
+[node name="394" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 15.5)
+
+[node name="395" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 15.5)
+
+[node name="396" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 15.5)
+
+[node name="397" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 15.5)
+
+[node name="398" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 15.5)
+
+[node name="399" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 15.5)
+
+[node name="400" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 15.5)
+
+[node name="401" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 15.5)
+
+[node name="402" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 15.5)
+
+[node name="403" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 15.5)
+
+[node name="404" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 15.5)
+
+[node name="405" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 15.5)
+
+[node name="406" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 16.5)
+
+[node name="407" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.31119, 16.5)
+
+[node name="408" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.02471, 16.5)
+
+[node name="409" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.922921, 16.5)
+
+[node name="410" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.814857, 16.5)
+
+[node name="411" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.75768, 16.5)
+
+[node name="412" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.665005, 16.5)
+
+[node name="413" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.519929, 16.5)
+
+[node name="414" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.489464, 16.5)
+
+[node name="415" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.445825, 16.5)
+
+[node name="416" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46224, 16.5)
+
+[node name="417" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.433838, 16.5)
+
+[node name="418" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.345471, 16.5)
+
+[node name="419" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386304, 16.5)
+
+[node name="420" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 16.5)
+
+[node name="421" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 16.5)
+
+[node name="422" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 16.5)
+
+[node name="423" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 16.5)
+
+[node name="424" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 16.5)
+
+[node name="425" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 16.5)
+
+[node name="426" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 16.5)
+
+[node name="427" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 16.5)
+
+[node name="428" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 16.5)
+
+[node name="429" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 16.5)
+
+[node name="430" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 16.5)
+
+[node name="431" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 16.5)
+
+[node name="432" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 16.5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h8s3k")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 31.5727, -4.41115)
-light_energy = 1.6
-light_indirect_energy = 10.212
-spot_range = 4096.0
-spot_attenuation = 0.125
-spot_angle = 22.71
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.645, -0.13, 2.077)
 size = Vector3(30, 2, 20)
 material = SubResource("FogMaterial_8e6fn")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 3.67621, 3.98872, 5.15736)
+[node name="lights" type="Node3D" parent="."]
+transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, -4.61161, 3.98872, 5.15736)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, 7.51131, 0, -3.50258)
 light_energy = 1.566
 spot_range = 34.822
 spot_angle = 30.0
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, -4.61161, 3.98872, 5.15736)
+[node name="SpotLight3D3" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 light_energy = 1.566
 spot_range = 34.822
 spot_angle = 30.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights"]
+transform = Transform3D(0.906308, -0.422618, -1.84732e-08, 0, -4.37114e-08, 1, -0.422618, -0.906308, -3.9616e-08, 0.135707, 27.584, -10.621)
+light_energy = 1.6
+light_indirect_energy = 10.212
+spot_range = 4096.0
+spot_attenuation = 0.125
+spot_angle = 22.71

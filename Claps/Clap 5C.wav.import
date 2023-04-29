@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br5buuk8di6q7"
+path="res://.godot/imported/Clap 5C.wav-87938f88134c01d80dcdcd4fa7e821a2.sample"
+
+[deps]
+
+source_file="res://Claps/Clap 5C.wav"
+dest_files=["res://.godot/imported/Clap 5C.wav-87938f88134c01d80dcdcd4fa7e821a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

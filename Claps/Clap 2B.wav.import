@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xdb7conmvfx3"
+path="res://.godot/imported/Clap 2B.wav-b4fbba4eefa350d2e90b0e6fa61b24dd.sample"
+
+[deps]
+
+source_file="res://Claps/Clap 2B.wav"
+dest_files=["res://.godot/imported/Clap 2B.wav-b4fbba4eefa350d2e90b0e6fa61b24dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
