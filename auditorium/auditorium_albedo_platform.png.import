@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbclxo2c5bbrj"
-path.s3tc="res://.godot/imported/auditorium_albedo_platform.png-0fe30a3e03db1a8cabcb1c22b3aec976.s3tc.ctex"
+path.etc2="res://.godot/imported/auditorium_albedo_platform.png-0fe30a3e03db1a8cabcb1c22b3aec976.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://auditorium/auditorium_albedo_platform.png"
-dest_files=["res://.godot/imported/auditorium_albedo_platform.png-0fe30a3e03db1a8cabcb1c22b3aec976.s3tc.ctex"]
+dest_files=["res://.godot/imported/auditorium_albedo_platform.png-0fe30a3e03db1a8cabcb1c22b3aec976.etc2.ctex"]
 
 [params]
 

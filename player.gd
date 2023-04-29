@@ -4,25 +4,13 @@ extends Node3D
 @onready var camera := $Camera as Camera3D
 @onready var arms := $Arms as Node3D
 @onready var hands := $Arms/Hands as Node3D
+@onready var hands_skeleton := $hands/metarig/Skeleton3D as Skeleton3D
+@onready var anim_player := $hands/AnimationPlayer as AnimationPlayer
+@onready var hand_height_path := $hands/intensity_height as Path3D
 
-@onready var hand_one := hands.get_child(0) as Node3D
-@onready var hand_two := hands.get_child(1) as Node3D
-
-@export var clap_freq_scale := 4.0
-@export var clap_curve := Curve.new()
-
-var _clap_delta := 0.0
-var _clap_angle := 0.0
-
-func _physics_process(delta: float) -> void:
-	var clap := controls.get_clap_strength()
-	var angle := (-0.25*PI) if is_zero_approx(clap) else (-0.125*PI)
-	_clap_angle = move_toward(_clap_angle, angle, delta)
-	_clap_delta += clap * clap_freq_scale * delta
-	arms.rotation.x = _clap_angle
-	hand_one.position.x = clap_curve.sample(fposmod(_clap_delta, 1))
-	hand_two.position.x = -hand_one.position.x
-
-func get_clap_anim_smp() -> AnimationNodeStateMachinePlayback:
-	var anim_tree := $Hands/AnimationTree as AnimationTree
-	return anim_tree["parameters/playback"]
+func _process(delta):
+	anim_player.current_animation = "clap"
+	var intensity := controls.get_clap_strength()
+	
+	hands_skeleton.position = hand_height_path.curve.samplef(intensity)
+	anim_player.speed_scale = intensity * 4

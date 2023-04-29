@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://8pp7ap74tt3r"]
+
+[ext_resource type="PackedScene" uid="uid://tmmio1hbbk74" path="res://hands.glb" id="1_6mpwr"]
+
+[sub_resource type="Curve3D" id="Curve3D_qe3ey"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.08165e-12, -2, 2.08165e-12, 0, 0, 0, 0, 0, 0, 2.08165e-12, 2, 2.08165e-12),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="hands" instance=ExtResource("1_6mpwr")]
+
+[node name="Skeleton3D" parent="metarig" index="0"]
+bones/1/position = Vector3(-4.77926, -1.03486, -0.395972)
+bones/1/rotation = Quaternion(0.238223, 0.903227, -0.352468, -0.0565393)
+bones/2/position = Vector3(-0.314975, 0.493732, 0.151794)
+bones/2/rotation = Quaternion(0.0483416, -0.680492, -0.121853, 0.720934)
+bones/3/rotation = Quaternion(0.0877211, 0.0593392, 0.140895, 0.984344)
+bones/4/rotation = Quaternion(0.0288349, 0.0388992, 0.0650218, 0.996708)
+bones/5/rotation = Quaternion(-0.0379845, -0.057602, -0.00982028, 0.997568)
+bones/6/rotation = Quaternion(0.181763, -0.567369, -0.159343, 0.787188)
+bones/7/rotation = Quaternion(0.025533, -0.225581, 0.0582731, 0.972145)
+bones/8/rotation = Quaternion(0.152222, 0.0383401, 0.175884, 0.971814)
+bones/9/position = Vector3(-0.0959471, 0.541859, 0.112386)
+bones/9/rotation = Quaternion(0.0299895, -0.696953, -0.13979, 0.702721)
+bones/10/rotation = Quaternion(0.103809, 0.118295, 0.18097, 0.970814)
+bones/11/rotation = Quaternion(-0.0155862, 0.105183, 0.0309371, 0.993849)
+bones/12/rotation = Quaternion(0.0165449, -0.142253, -0.0125021, 0.989613)
+bones/13/position = Vector3(0.0899942, 0.541773, 0.0255905)
+bones/13/rotation = Quaternion(0.00369269, -0.722578, -0.159564, 0.672612)
+bones/14/rotation = Quaternion(0.0945645, 0.20606, 0.172193, 0.958617)
+bones/15/rotation = Quaternion(0.00998425, 0.0547449, 0.0532602, 0.997029)
+bones/16/rotation = Quaternion(0.0291588, -0.196647, 0.00122737, 0.98004)
+bones/17/position = Vector3(0.261898, 0.519468, -0.0856938)
+bones/17/rotation = Quaternion(-0.0584525, -0.743221, -0.151984, 0.648927)
+bones/18/rotation = Quaternion(0.108809, 0.357811, 0.0526145, 0.925939)
+bones/19/rotation = Quaternion(-0.00637695, -0.0433274, 0.123987, 0.991317)
+bones/20/rotation = Quaternion(0.0836805, -0.193927, -0.0230856, 0.977168)
+bones/21/position = Vector3(4.71107, -0.956318, 0.52678)
+bones/21/rotation = Quaternion(-0.0134136, 0.147627, -0.0599707, 0.987132)
+bones/22/rotation = Quaternion(-0.00621852, -0.679183, 0.0336763, 0.733169)
+bones/23/rotation = Quaternion(0.0372495, 0.0266379, 0.196312, 0.979472)
+bones/24/rotation = Quaternion(0.0234788, 0.0176653, 0.0822716, 0.996177)
+bones/25/rotation = Quaternion(0.103498, -0.0245263, 0.166985, 0.980205)
+bones/26/rotation = Quaternion(0.0199691, -0.642199, 0.216414, 0.735083)
+bones/27/rotation = Quaternion(-0.048526, -0.440985, -0.0523661, 0.894671)
+bones/28/rotation = Quaternion(-0.128175, -0.0725477, -0.257066, 0.955105)
+bones/29/rotation = Quaternion(0.0273294, -0.697192, 0.0356141, 0.715478)
+bones/30/rotation = Quaternion(0.0199365, 0.129266, 0.255628, 0.957887)
+bones/31/rotation = Quaternion(0.0162562, 0.0930615, 0.0384909, 0.994783)
+bones/32/rotation = Quaternion(0.0022923, -0.0742258, 0.220645, 0.972523)
+bones/33/rotation = Quaternion(0.055516, -0.727337, 0.0337213, 0.6832)
+bones/34/rotation = Quaternion(0.00495165, 0.287213, 0.278873, 0.916359)
+bones/35/rotation = Quaternion(-0.0184021, 0.0894257, 0.0388067, 0.995067)
+bones/36/rotation = Quaternion(-0.0464609, -0.140469, 0.15611, 0.976596)
+bones/37/rotation = Quaternion(0.0578291, -0.752815, 0.0715897, 0.651767)
+bones/38/rotation = Quaternion(0.0354819, 0.439496, 0.177016, 0.879914)
+bones/38/scale = Vector3(1.00559, 1.00559, 1.00559)
+bones/39/rotation = Quaternion(-0.106714, 0.0579227, 0.0253222, 0.992278)
+bones/40/rotation = Quaternion(-0.102417, -0.166426, 0.103231, 0.975273)
+
+[node name="AnimationPlayer" parent="." index="1"]
+reset_on_save = false
+
+[node name="intensity_height" type="Path3D" parent="." index="2"]
+curve = SubResource("Curve3D_qe3ey")
