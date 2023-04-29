@@ -1354,7 +1354,6 @@ spot_range = 34.822
 spot_angle = 30.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 light_energy = 1.566
 spot_range = 34.822
 spot_angle = 30.0

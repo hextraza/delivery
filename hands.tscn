@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_qe3ey"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.08165e-12, -2, 2.08165e-12, 0, 0, 0, 0, 0, 0, 2.08165e-12, 2, 2.08165e-12),
+"points": PackedVector3Array(0, -0.629378, -1.03398, 0, 0.629378, 1.03398, 0.0847657, -1.98489, -0.607252, 0.00952148, -1.0677, 1.15199, -0.00952148, 1.0677, -1.15199, 0.0735269, 1.90939, -0.663404),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -64,4 +64,5 @@ bones/40/rotation = Quaternion(-0.102417, -0.166426, 0.103231, 0.975273)
 reset_on_save = false
 
 [node name="intensity_height" type="Path3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09251, -0.103884, 0.611402)
 curve = SubResource("Curve3D_qe3ey")

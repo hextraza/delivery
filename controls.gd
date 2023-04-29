@@ -3,6 +3,9 @@ class_name Controls
 
 func get_just_clapped() -> bool:
 	return Input.is_action_just_pressed('clap')
+	
+func get_stopped_clapping() -> bool:
+	return Input.is_action_just_released('clap')
 
 func get_clap_strength() -> float:
 	return 0.25 * (
