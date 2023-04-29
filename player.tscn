@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bky8v4euitjqj"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_g7j8t"]
+[ext_resource type="PackedScene" uid="uid://d1ooqlaa8rm8o" path="res://controls.tscn" id="2_k3v4b"]
+[ext_resource type="Curve" uid="uid://bmgktxnjvfuox" path="res://player_clap_curve.tres" id="2_x34nn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_khncb"]
+radius = 0.05
+height = 0.1
+
+[node name="player" type="Node3D"]
+script = ExtResource("1_g7j8t")
+clap_curve = ExtResource("2_x34nn")
+
+[node name="Controls" parent="." instance=ExtResource("2_k3v4b")]
+
+[node name="Camera" type="Camera3D" parent="."]
+
+[node name="Arms" type="Node3D" parent="."]
+
+[node name="Hands" type="Marker3D" parent="Arms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="Arms/Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0)
+mesh = SubResource("SphereMesh_khncb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Arms/Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0)
+mesh = SubResource("SphereMesh_khncb")
+skeleton = NodePath("../../..")
