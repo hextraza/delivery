@@ -22,3 +22,7 @@ func _physics_process(delta: float) -> void:
 	arms.rotation.x = _clap_angle
 	hand_one.position.x = clap_curve.sample(fposmod(_clap_delta, 1))
 	hand_two.position.x = -hand_one.position.x
+
+func get_clap_anim_smp() -> AnimationNodeStateMachinePlayback:
+	var anim_tree := $Hands/AnimationTree as AnimationTree
+	return anim_tree["parameters/playback"]
