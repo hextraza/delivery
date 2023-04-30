@@ -31,6 +31,15 @@ var controls = player.find_child("Controls")
 @onready
 var player_audio = player.find_child("hands").find_child("clap")
 
+@onready
+var animation_tree = $speaker/AnimationTree as AnimationTree
+
+@onready
+var head_anim = animation_tree.get("parameters/Head Movement/playback") as AnimationNodeStateMachinePlayback
+
+@onready
+var mouth_anim = animation_tree.get("parameters/Lip Flaps/playback") as AnimationNodeStateMachinePlayback
+
 var random = RandomNumberGenerator.new()
 
 var num_lines = 25
@@ -56,6 +65,8 @@ var context = {
 
 func _ready():
 	random.randomize()
+	head_anim.travel("Idle")
+	mouth_anim.travel("Idle")
 
 func set_clap_thresholds(level):
 	match level:
@@ -90,15 +101,23 @@ func _process(delta):
 			player_reset_acc = 0.0
 	
 	if applause_expected && player_clap_acc >= player_expected_clap_threshold:
+		head_anim.travel("Idle")
 		player_immune = true
 	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold:
+		mouth_anim.travel("Idle")
+		head_anim.travel("Angry")
 		player.kill()
 	
 	if !audio_emitter.playing && silence <= 0.0:
 		if applause_expected && !player_immune:
+			mouth_anim.travel("Idle")
+			head_anim.travel("Angry")
 			player.kill()
 		elif applause_expected:
 			player_clap_acc = 0.0
+			
+		if step == 0:
+			head_anim.travel("IdleTalking")
 		
 		player_immune = false
 		applause_expected = false
@@ -109,6 +128,7 @@ func _process(delta):
 		
 		if line_finished:
 			applause_expected = true
+			head_anim.travel("Idle")
 			step = 0
 			current_line += 1
 			
@@ -198,6 +218,7 @@ func play_mouth_noise(keys):
 	audio_emitter.stream = sound_dict[level][transition][choice]
 	audio_emitter.pitch_scale = random.randf_range(0.95, 1.05)
 	audio_emitter.volume_db = random.randf_range(-2, 2)
+	mouth_anim.travel("LipFlap")
 	audio_emitter.play(0.0)
 
 

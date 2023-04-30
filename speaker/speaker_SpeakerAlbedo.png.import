@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbdde775qkimc"
-path.etc2="res://.godot/imported/auditorium_albedo_auditorium.png-a3db26ad8774bd9115ce0b1afc6eb7b4.etc2.ctex"
+uid="uid://d3kxwjlk4dg0c"
+path.etc2="res://.godot/imported/speaker_SpeakerAlbedo.png-65c074819b12d748dfa455e529b86c54.etc2.ctex"
 metadata={
 "imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://auditorium/auditorium_albedo_auditorium.png"
-dest_files=["res://.godot/imported/auditorium_albedo_auditorium.png-a3db26ad8774bd9115ce0b1afc6eb7b4.etc2.ctex"]
+source_file="res://speaker/speaker_SpeakerAlbedo.png"
+dest_files=["res://.godot/imported/speaker_SpeakerAlbedo.png-65c074819b12d748dfa455e529b86c54.etc2.ctex"]
 
 [params]
 

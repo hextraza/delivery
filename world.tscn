@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c8a06eex3mayv" path="res://auditorium/auditorium.glb" id="2_n1pw5"]
 [ext_resource type="PackedScene" uid="uid://dwi4poq05wsmh" path="res://podium.glb" id="3_c6c5s"]
 [ext_resource type="Script" path="res://crowd_spawner.gd" id="4_3ygib"]
-[ext_resource type="PackedScene" uid="uid://pqp0507g152m" path="res://speaker.tscn" id="4_dh426"]
 [ext_resource type="PackedScene" uid="uid://bky8v4euitjqj" path="res://player.tscn" id="6_xb7bm"]
+[ext_resource type="PackedScene" uid="uid://b5nfu5wieic4c" path="res://speaker/speaker.tscn" id="7_nxm8g"]
 [ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="7_weijy"]
 
 [sub_resource type="Environment" id="Environment_h8s3k"]
@@ -33,9 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32244, 0.989128, -3.13994)
 
 [node name="podium" parent="." instance=ExtResource("3_c6c5s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.369718, 1.90098, -3.90367)
-
-[node name="speaker" parent="podium" groups=["speaker"] instance=ExtResource("4_dh426")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.69133, 1.61102, 0.075282)
 
 [node name="crowd spawn points" type="Node3D" parent="."]
 script = ExtResource("4_3ygib")
@@ -1371,3 +1368,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40913, 0.378596, 5.54501)
 
 [node name="player" parent="chair" instance=ExtResource("6_xb7bm")]
 transform = Transform3D(-0.959599, 2.36557e-16, -0.28137, 3.48787e-16, 1, -3.48787e-16, 0.28137, -4.32834e-16, -0.959599, -0.12272, 0.82485, -0.394788)
+
+[node name="speaker" parent="." groups=["speaker"] instance=ExtResource("7_nxm8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.367703, 3.24267, -4.69559)
