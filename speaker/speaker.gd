@@ -40,6 +40,18 @@ var head_anim = animation_tree.get("parameters/Head Movement/playback") as Anima
 @onready
 var mouth_anim = animation_tree.get("parameters/Lip Flaps/playback") as AnimationNodeStateMachinePlayback
 
+@onready
+var neutral_position = $"Neutral Position" as Node3D
+
+@onready
+var speaker = $speaker as Node3D
+
+@onready
+var right_eye = $speaker/eye_right as Node3D
+
+@onready
+var left_eye = $speaker/eye_left as Node3D
+
 var random = RandomNumberGenerator.new()
 
 var num_lines = 25
@@ -55,6 +67,9 @@ var player_immune = false
 var player_reset_acc = 0.0
 var player_reset_threshold = 2.5
 var silence_length = 0.0
+var angry = false
+var look_target: Vector3
+var look_actual: Vector3
 
 var context = {
 	"baseline": 0,
@@ -68,6 +83,9 @@ func _ready():
 	random.randomize()
 	head_anim.travel("Idle")
 	mouth_anim.travel("Idle")
+	print("change look target 80")
+	change_look_target(to_global(-Vector3.FORWARD))
+	look_actual = look_target
 
 func set_clap_thresholds(level):
 	match level:
@@ -87,6 +105,22 @@ func _process(delta):
 	else:
 		silence = 0.0
 		silence_length = 0.0
+	
+	var scale_amount = remap(player_clap_acc, 0.0, player_expected_clap_threshold, 0.1, 2.0)
+	right_eye.scale = Vector3(scale_amount, scale_amount, scale_amount)
+	left_eye.scale = Vector3(scale_amount, scale_amount, scale_amount)
+	
+	look_actual = lerp(look_actual, look_target, 4.0 * delta)
+	speaker.look_at(look_actual)
+		
+	# Stare at player if they are approaching the rude threshold
+	if player_clap_acc > (player_rude_clap_threshold * 0.5) && !applause_expected && angry == false:
+#		print("Anger and look at player 101")
+		head_anim.travel("Anger")
+#		print("change look target 109")
+		change_look_target(player.global_position)
+		angry = true
+
 		
 	print("applause_expected: ", applause_expected)
 	print("player_expected_clap_threshold: ", player_expected_clap_threshold)
@@ -104,17 +138,31 @@ func _process(delta):
 		if player_reset_acc > player_reset_threshold && !player_immune:
 			player_clap_acc = 0.0
 			player_reset_acc = 0.0
+			if angry == true:
+				angry = false
+				if applause_expected:
+#					print("Idle 122")
+					head_anim.travel("Idle")
+#					print("change look target 133")
+					change_look_target(player.global_position)
+				else:
+#					print("Idle 139")
+					head_anim.travel("Idle")
+#					print("change look target 141")
+					change_look_target(to_global(-Vector3.FORWARD))
 	
 	if applause_expected && player_clap_acc >= (silence_length / player_expected_clap_threshold * context["difficulty_mod"]):
 		head_anim.travel("Idle")
 		player_immune = true
 	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold:
+#		print("Angry 131")
 		mouth_anim.travel("Idle")
 		head_anim.travel("Angry")
 		player.kill()
 	
 	if !audio_emitter.playing && silence <= 0.0:
 		if applause_expected && !player_immune:
+#			print("Angry 138")
 			mouth_anim.travel("Idle")
 			head_anim.travel("Angry")
 			player.kill()
@@ -122,7 +170,11 @@ func _process(delta):
 			player_clap_acc = 0.0
 			
 		if step == 0:
+#			print("IdleTalking 146")
 			head_anim.travel("IdleTalking")
+			if angry == false:
+#				print("change look target 158")
+				change_look_target(to_global(-Vector3.FORWARD))
 		
 		player_immune = false
 		applause_expected = false
@@ -133,6 +185,9 @@ func _process(delta):
 		
 		if line_finished:
 			applause_expected = true
+#			print("Idle 158")
+#			print("change look target 170")
+			change_look_target(player.global_position)
 			head_anim.travel("Idle")
 			step = 0
 			current_line += 1
@@ -241,3 +296,7 @@ func get_expecting_applause():
 	
 func get_silence_length():
 	return silence_length
+
+func change_look_target(target: Vector3):
+#	print("Target changed: ", target)
+	look_target = target
