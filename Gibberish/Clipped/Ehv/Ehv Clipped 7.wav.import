@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3ukxlkxsxiwf"
+path="res://.godot/imported/Ehv Clipped 7.wav-55058d94d0158f0a95fc960f40f46c43.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Ehv/Ehv Clipped 7.wav"
+dest_files=["res://.godot/imported/Ehv Clipped 7.wav-55058d94d0158f0a95fc960f40f46c43.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

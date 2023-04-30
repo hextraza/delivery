@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwx0enwpi4ukk"
+path="res://.godot/imported/Loh Full 7.wav-6b07c6a613710cf4a6f09ae9e4275d04.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Loh/Loh Full 7.wav"
+dest_files=["res://.godot/imported/Loh Full 7.wav-6b07c6a613710cf4a6f09ae9e4275d04.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

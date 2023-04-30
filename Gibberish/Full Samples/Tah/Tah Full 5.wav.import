@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr1ailhne8d4c"
+path="res://.godot/imported/Tah Full 5.wav-c781bfe70825bd1553de29ea8836a887.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Tah/Tah Full 5.wav"
+dest_files=["res://.godot/imported/Tah Full 5.wav-c781bfe70825bd1553de29ea8836a887.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gtswxxx4h2d7"
+path="res://.godot/imported/Mi Clipped 6.wav-6efa96ee338dfc1bfd1c9fb3ae94779f.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Mi/Mi Clipped 6.wav"
+dest_files=["res://.godot/imported/Mi Clipped 6.wav-6efa96ee338dfc1bfd1c9fb3ae94779f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bashdjfe0q20d"
+path="res://.godot/imported/Mi Full 7.wav-33ff79ed5b617d8f0f84ccf49b9dfec6.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Mi/Mi Full 7.wav"
+dest_files=["res://.godot/imported/Mi Full 7.wav-33ff79ed5b617d8f0f84ccf49b9dfec6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

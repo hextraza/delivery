@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhx5thoy0nak3"
+path="res://.godot/imported/Voh Full 1.wav-7b3cc64a16fb9326642128ed0c3bf027.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Voh/Voh Full 1.wav"
+dest_files=["res://.godot/imported/Voh Full 1.wav-7b3cc64a16fb9326642128ed0c3bf027.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

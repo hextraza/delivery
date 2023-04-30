@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://5p5vyx0qp13h"
+path="res://.godot/imported/Meh Full 9.wav-b9c4b1536df46a6da1a2296f8d2430c2.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Meh/Meh Full 9.wav"
+dest_files=["res://.godot/imported/Meh Full 9.wav-b9c4b1536df46a6da1a2296f8d2430c2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

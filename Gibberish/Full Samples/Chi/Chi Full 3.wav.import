@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0p662701lpj5"
+path="res://.godot/imported/Chi Full 3.wav-bf4aeed041659feebd27ea39a1f88717.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Chi/Chi Full 3.wav"
+dest_files=["res://.godot/imported/Chi Full 3.wav-bf4aeed041659feebd27ea39a1f88717.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

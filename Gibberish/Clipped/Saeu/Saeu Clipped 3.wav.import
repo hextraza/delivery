@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cho7sujg8y0rb"
+path="res://.godot/imported/Saeu Clipped 3.wav-cb5ef67ddae96d4f377b2f6aa87da71e.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Saeu/Saeu Clipped 3.wav"
+dest_files=["res://.godot/imported/Saeu Clipped 3.wav-cb5ef67ddae96d4f377b2f6aa87da71e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

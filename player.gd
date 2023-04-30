@@ -103,6 +103,8 @@ func process_intensity(i: float):
 	clap_audio_stream.pitch_scale = rng.randf_range(0.75, 1.25)
 	self.intensity = i
 
+func kill():
+	add_external_screen_shake(200)
 
 func _handle_screen_shake():
 	var amount = self_shake_amount + external_shake_amount

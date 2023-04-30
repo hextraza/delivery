@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b547mn1ptyfy0"
+path="res://.godot/imported/Wi Full 7.wav-05c3366768641d92e5ace3e6fc400086.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Wi/Wi Full 7.wav"
+dest_files=["res://.godot/imported/Wi Full 7.wav-05c3366768641d92e5ace3e6fc400086.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

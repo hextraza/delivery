@@ -22,6 +22,15 @@ var sound_dict = {
 @onready
 var audio_emitter: AudioStreamPlayer3D = get_node("AudioStreamPlayer3D")
 
+@onready
+var player = get_tree().get_first_node_in_group("player")
+
+@onready
+var controls = player.find_child("Controls")
+
+@onready
+var player_audio = player.find_child("hands").find_child("clap")
+
 var random = RandomNumberGenerator.new()
 
 var num_lines = 25
@@ -29,37 +38,87 @@ var current_line = 0
 var step = 0
 var silence = 0.0
 var last_choice = -1
+var player_rude_clap_threshold = 1.0
+var player_expected_clap_threshold = 5.0
+var player_clap_acc = 0.0
+var applause_expected = false
+var player_immune = false
+var player_reset_acc = 0.0
+var player_reset_threshold = 2.5
 
 var context = {
 	"baseline": 0,
 	"target": 2,
 	"length": 10,
-	"tempo": 1.0
+	"tempo": 1.0,
+	"difficulty_mod": 1.0
 }
 
 func _ready():
 	random.randomize()
 
+func set_clap_thresholds(level):
+	match level:
+		"low":
+			player_rude_clap_threshold = 1.0 * context["difficulty_mod"]
+			player_expected_clap_threshold = 3.0 * context["difficulty_mod"]
+		"medium":
+			player_rude_clap_threshold = 1.3 * context["difficulty_mod"]
+			player_expected_clap_threshold = 2.0 * context["difficulty_mod"]
+		"high":
+			player_rude_clap_threshold = 1.5 * context["difficulty_mod"]
+			player_expected_clap_threshold = 1.0 * context["difficulty_mod"]
+
 func _process(delta):
 	if silence > 0.0:
 		silence -= delta
 		
+	print("applause_expected: ", applause_expected)
+	print("player_expected_clap_threshold: ", player_expected_clap_threshold)
+	print("player_rude_clap_threshold: ", player_rude_clap_threshold)
+	print("player_acc: ", player_clap_acc)
+	print("player_immune: ", player_immune, "\n")
+		
+	if player_audio.playing == true:
+		player_clap_acc += delta * get_clap_intensity_modifier(controls.get_clap_strength())
+		player_reset_acc = 0.0
+	else:
+		player_reset_acc += delta
+		
+		if player_reset_acc > player_reset_threshold && !player_immune:
+			player_clap_acc = 0.0
+			player_reset_acc = 0.0
+	
+	if applause_expected && player_clap_acc >= player_expected_clap_threshold:
+		player_immune = true
+	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold:
+		player.kill()
+	
 	if !audio_emitter.playing && silence <= 0.0:
+		if applause_expected && !player_immune:
+			player.kill()
+		elif applause_expected:
+			player_clap_acc = 0.0
+		
+		player_immune = false
+		applause_expected = false
 		var result = play_next_sound(context, step)
 		var line_finished = result[0]
 		var step_diff = result[1]
 		step += step_diff
 		
 		if line_finished:
+			applause_expected = true
 			step = 0
 			current_line += 1
 			
-			silence = random.randf_range(2, 4)
+			silence = random.randf_range(2.5, 4.5)
 			
 			context["baseline"] = random.randi_range(0, 2)
 			context["target"] = random.randi_range(0, 2)
 			context["length"] = random.randi_range(6, 25)
 			context["tempo"] = random.randf_range(0.9, 1.2)
+			context["difficulty_mod"] = random.randf_range(0.5, 1.3)
 
 	if current_line >= num_lines:
 		pass #win I guess
@@ -115,13 +174,16 @@ func get_keys(context, step):
 	return [level, transition]
 
 func index_to_level(index):
+	var current_level = ""
 	match index:
-		0: return "low"
-		1: return "medium"
-		2: return "high"
+		0: current_level = "low"
+		1: current_level = "medium"
+		2: current_level = "high"
+		
+	set_clap_thresholds(current_level)
+	return current_level
 
 func play_mouth_noise(keys):
-	print(context)
 	var level = keys[0]
 	var transition = keys[1]
 	var choices = [0, 1, 2, 3]
@@ -138,3 +200,12 @@ func play_mouth_noise(keys):
 	audio_emitter.volume_db = random.randf_range(-2, 2)
 	audio_emitter.play(0.0)
 
+
+func get_clap_intensity_modifier(value):
+	
+	match value:
+		0.0: return 1.0
+		0.25: return 1.1
+		0.5: return 1.2
+		0.75: return 1.3
+		1.0: return 1.4

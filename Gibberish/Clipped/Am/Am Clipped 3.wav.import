@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fiswi3hc1mre"
+path="res://.godot/imported/Am Clipped 3.wav-22dfaed1395d921799f7b376cd2c6a87.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Am/Am Clipped 3.wav"
+dest_files=["res://.godot/imported/Am Clipped 3.wav-22dfaed1395d921799f7b376cd2c6a87.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

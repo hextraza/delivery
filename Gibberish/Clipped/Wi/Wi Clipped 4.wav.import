@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dll76tixqww7n"
+path="res://.godot/imported/Wi Clipped 4.wav-b3a11d56446388a1955b3a461bbf4891.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Wi/Wi Clipped 4.wav"
+dest_files=["res://.godot/imported/Wi Clipped 4.wav-b3a11d56446388a1955b3a461bbf4891.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

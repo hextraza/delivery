@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dc5pygy5h271i"
+path="res://.godot/imported/Voh Clipped 2.wav-55e112a905c62d3b283c1961d3099947.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Voh/Voh Clipped 2.wav"
+dest_files=["res://.godot/imported/Voh Clipped 2.wav-55e112a905c62d3b283c1961d3099947.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmvx3yd3dr7t5"
+path="res://.godot/imported/Loh Clipped 2.wav-36993267cf98df26786b1a97d93131a8.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Loh/Loh Clipped 2.wav"
+dest_files=["res://.godot/imported/Loh Clipped 2.wav-36993267cf98df26786b1a97d93131a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

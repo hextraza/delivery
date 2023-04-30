@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4sliq7bgmp2k"
+path="res://.godot/imported/Ob Clipped 8.wav-4d52c6af0ac20572dbb68b565f85a83c.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Ob/Ob Clipped 8.wav"
+dest_files=["res://.godot/imported/Ob Clipped 8.wav-4d52c6af0ac20572dbb68b565f85a83c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
