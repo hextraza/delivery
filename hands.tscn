@@ -11,6 +11,7 @@ _data = {
 point_count = 2
 
 [node name="hands" instance=ExtResource("1_6mpwr")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="metarig" index="0"]
 bones/1/position = Vector3(-1.33861, -1.03821, 0.990287)

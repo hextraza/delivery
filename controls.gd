@@ -2,7 +2,7 @@ extends Node
 class_name Controls
 
 var look_pitch := 0.0
-var look_yaw := 0.0
+var look_yaw := 180.0
 
 func get_just_clapped() -> bool:
 	return Input.is_action_just_pressed('clap')

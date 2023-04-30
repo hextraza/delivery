@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2ycceg1euwuv"]
+[gd_scene load_steps=10 format=3 uid="uid://b2ycceg1euwuv"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_1ixjv"]
 [ext_resource type="PackedScene" uid="uid://c8a06eex3mayv" path="res://auditorium/auditorium.glb" id="2_n1pw5"]
 [ext_resource type="PackedScene" uid="uid://dwi4poq05wsmh" path="res://podium.glb" id="3_c6c5s"]
 [ext_resource type="Script" path="res://crowd_spawner.gd" id="4_3ygib"]
 [ext_resource type="PackedScene" uid="uid://sjhnysq56ik7" path="res://speaker.glb" id="4_cpa6b"]
+[ext_resource type="PackedScene" uid="uid://bky8v4euitjqj" path="res://player.tscn" id="6_xb7bm"]
+[ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="7_weijy"]
 
 [sub_resource type="Environment" id="Environment_h8s3k"]
 background_mode = 1
@@ -25,10 +27,6 @@ edge_fade = 0.214354
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0677462, 0)
 script = ExtResource("1_1ixjv")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.43837, 1.62498, 1.51672)
-fov = 90.0
 
 [node name="auditorium" parent="." instance=ExtResource("2_n1pw5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32244, 0.989128, -3.13994)
@@ -415,37 +413,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.345, 5.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.434, 5.5)
 
 [node name="125" type="Node3D" parent="crowd spawn points"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.345, 5.5)
-
-[node name="126" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.446, 5.5)
 
-[node name="127" type="Node3D" parent="crowd spawn points"]
+[node name="126" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.489, 5.5)
 
-[node name="128" type="Node3D" parent="crowd spawn points"]
+[node name="127" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.52, 5.5)
 
-[node name="129" type="Node3D" parent="crowd spawn points"]
+[node name="128" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.665, 5.5)
 
-[node name="130" type="Node3D" parent="crowd spawn points"]
+[node name="129" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.758, 5.5)
 
-[node name="131" type="Node3D" parent="crowd spawn points"]
+[node name="130" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.758, 5.5)
 
-[node name="132" type="Node3D" parent="crowd spawn points"]
+[node name="131" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.923, 5.5)
 
-[node name="133" type="Node3D" parent="crowd spawn points"]
+[node name="132" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.923, 5.5)
 
-[node name="134" type="Node3D" parent="crowd spawn points"]
+[node name="133" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.311, 5.5)
 
-[node name="135" type="Node3D" parent="crowd spawn points"]
+[node name="134" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.5, 5.5)
+
+[node name="135" type="Node3D" parent="crowd spawn points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4493, 1.5, 5.5)
 
 [node name="136" type="Node3D" parent="crowd spawn points"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 6.5)
@@ -1367,3 +1365,9 @@ light_indirect_energy = 10.212
 spot_range = 4096.0
 spot_attenuation = 0.125
 spot_angle = 22.71
+
+[node name="chair" parent="." instance=ExtResource("7_weijy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40913, 0.378596, 5.54501)
+
+[node name="player" parent="chair" instance=ExtResource("6_xb7bm")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, -0.0310998, 0.82485, -0.420578)
