@@ -59,10 +59,7 @@ func _process(delta):
 	beak_head.look_at(look_actual)
 	
 	if random.randi_range(0, 100) < 1:
-		if random.randf() > 0.5:
-			stare_at(player)
-		else:
-			stare_at(speaker)
+		stare_at_target(player, 3.0)
 
 	if !clapping:
 		animation.travel("Idle")
@@ -139,5 +136,7 @@ func get_clap_stream():
 		elif i == 3:
 			return CLAP_5C
 			
-func stare_at(target: Node3D):
+func stare_at_target(target: Node3D, time: float):
 	look_target = target
+	await get_tree().create_timer(time).timeout
+	look_target = speaker
