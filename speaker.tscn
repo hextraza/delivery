@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://pqp0507g152m"]
+
+[ext_resource type="Script" path="res://speaker.gd" id="1_v3uy2"]
+[ext_resource type="PackedScene" uid="uid://sjhnysq56ik7" path="res://speaker.glb" id="2_6yo0t"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_v3uy2")
+
+[node name="speaker" parent="." instance=ExtResource("2_6yo0t")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
