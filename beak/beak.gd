@@ -38,6 +38,9 @@ var clap_speed_acc = 0.0
 var begin_clap_threshold = 0.0
 var clap_intensity = 1
 var num_claps = 0
+var clap_length = 0.0
+var clap_len_acc = 0.0
+
 @onready var look_target := speaker
 @onready var look_actual := speaker.global_position
 
@@ -60,8 +63,10 @@ func _process(delta):
 	
 	if random.randi_range(0, 100) < 1:
 		stare_at_target(player, 3.0)
+		
+	clap_len_acc += delta
 
-	if !clapping:
+	if !clapping || clap_len_acc >= clap_length:
 		animation.travel("Idle")
 		return
 		
@@ -79,20 +84,22 @@ func _process(delta):
 			audio_emitter.stream = get_clap_stream()
 			audio_emitter.pitch_scale = random.randf_range(0.9, 1.2)
 			audio_emitter.volume_db = random.randf_range(-10, 2)
-			
-			if num_claps >= 6 && clap_intensity >= 4:
-				audio_emitter.volume_db = random.randf_range(-10, 1)
-				
 			clap_speed_acc = 0.0
 			animation.travel("Clap")
 			audio_emitter.play(0.0)
 
-func toggle_clap():
+func toggle_clap(avg_len):
 	animation.travel("ClapWaiting")
 	clapping = !clapping
 	clap_speed = random.randf_range(0.4, 1.0) / clap_intensity
 	begin_clap_threshold = random.randf_range(0.0, 3.0) * clap_speed + random.randf_range(0.0, 15.0)
 	num_claps = 0
+	clap_len_acc = 0.0
+	
+	if clapping:
+		clap_length = avg_len * random.randf_range(0.65, 0.95)
+	else:
+		clap_length = 0
 
 func set_intensity(value):
 	clap_intensity = value

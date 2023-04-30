@@ -82,7 +82,7 @@ func _process(delta):
 		beak.set_intensity(ceil(current_intensity))
 		
 		if speaker_wants_applause != speaker_wanted_applause:
-			beak.toggle_clap()
+			beak.toggle_clap(speaker.get_silence_length())
 			
 	speaker_wanted_applause = speaker_wants_applause
 	

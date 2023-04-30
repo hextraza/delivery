@@ -238,3 +238,6 @@ func get_clap_intensity_modifier(value):
 		
 func get_expecting_applause():
 	return applause_expected
+	
+func get_silence_length():
+	return silence_length
