@@ -60,9 +60,6 @@ func _ready():
 func _process(delta):
 	look_actual = lerp(look_actual, look_target.global_position, 2.0 * delta)
 	beak_head.look_at(look_actual)
-	
-	if random.randi_range(0, 100) < 1:
-		stare_at_target(player, 3.0)
 		
 	clap_len_acc += delta
 

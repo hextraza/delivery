@@ -10,6 +10,8 @@ var speaker_wants_applause = false
 var speaker_wanted_applause = false
 var delta_intensity_reset_acc = 0.0
 var delta_intensity_reset_threshold = 4.0
+var hunting_beaks = []
+var passive_beaks = []
 
 @onready
 var speaker = get_tree().get_first_node_in_group("speaker")
@@ -23,7 +25,10 @@ var controls = player.find_child("Controls")
 @onready
 var player_audio = player.find_child("hands").find_child("clap")
 
+var random = RandomNumberGenerator.new()
+
 func _ready():
+	random.randomize()
 	var shift = false
 	var children = self.get_children()
 	
@@ -40,6 +45,7 @@ func _ready():
 		
 		add_child(beak)
 		beaks.append(beak)
+		passive_beaks = beaks.duplicate()
 
 
 func _process(delta):
@@ -73,6 +79,9 @@ func _process(delta):
 	if delta_intensity >= intensity_reactivity_threshold:
 		player.kill()
 		
+	var num_hunting = floor(delta_intensity / intensity_reactivity_threshold * len(beaks))
+	partition_beaks(num_hunting)
+		
 	#print("current_intensity ", current_intensity)
 	#print("delta_intensity ", delta_intensity)
 	#print("delta_intensity_reset_acc ", delta_intensity_reset_acc, "\n")
@@ -84,8 +93,27 @@ func _process(delta):
 		if speaker_wants_applause != speaker_wanted_applause:
 			beak.toggle_clap(speaker.get_silence_length())
 			
+		if beak in hunting_beaks:
+			beak.stare_at_target(player, random.randi_range(1.0, 5.0))
+			
 	speaker_wanted_applause = speaker_wants_applause
+
+func partition_beaks(num_hunting_beaks):
+	var difference = num_hunting_beaks - hunting_beaks.size()
 	
+	if difference > 0:
+		for _i in range(difference):
+			if passive_beaks.size() == 0:
+				break
+			var beak = passive_beaks.pop_front()
+			hunting_beaks.append(beak)
+	elif difference < 0:
+		for _i in range(-difference):
+			if hunting_beaks.size() == 0:
+				break
+			var beak = hunting_beaks.pop_front()
+			passive_beaks.append(beak)
+
 
 func get_clap_intensity_modifier(value):
 	match value:
