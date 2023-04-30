@@ -1,0 +1,29 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://u2dmbrgvm6rc"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_sltct"]
+resource_name = "Reverb"
+room_size = 0.7
+damping = 0.3
+spread = 0.7
+wet = 0.1
+
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_i6qm0"]
+resource_name = "HighPassFilter"
+cutoff_hz = 700.0
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_7f6fh"]
+resource_name = "LowPassFilter"
+cutoff_hz = 6000.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_0vjws"]
+resource_name = "Compressor"
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_sltct")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectHighPassFilter_i6qm0")
+bus/0/effect/1/enabled = true
+bus/0/effect/2/effect = SubResource("AudioEffectLowPassFilter_7f6fh")
+bus/0/effect/2/enabled = true
+bus/0/effect/3/effect = SubResource("AudioEffectCompressor_0vjws")
+bus/0/effect/3/enabled = false

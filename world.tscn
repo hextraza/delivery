@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2ycceg1euwuv"]
+[gd_scene load_steps=8 format=3 uid="uid://b2ycceg1euwuv"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_1ixjv"]
 [ext_resource type="PackedScene" uid="uid://c8a06eex3mayv" path="res://auditorium/auditorium.glb" id="2_n1pw5"]
 [ext_resource type="PackedScene" uid="uid://dwi4poq05wsmh" path="res://podium.glb" id="3_c6c5s"]
 [ext_resource type="Script" path="res://crowd_spawner.gd" id="4_3ygib"]
@@ -23,9 +24,10 @@ edge_fade = 0.214354
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0677462, 0)
+script = ExtResource("1_1ixjv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.633963, 3.40094, 8.62979)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.43837, 1.62498, 1.51672)
 fov = 90.0
 
 [node name="auditorium" parent="." instance=ExtResource("2_n1pw5")]

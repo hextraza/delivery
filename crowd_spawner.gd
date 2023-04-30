@@ -1,11 +1,14 @@
 extends Node3D
 
+var beaks = []
+var timer = 0.0
+var event_triggered = 0
 
 func _ready():
 	var shift = false
 	var children = self.get_children()
 	
-	for i in range(children.size()):			
+	for i in children.size():			
 		var beak = load("res://beak.tscn").instantiate()
 		beak.position = children[i].position
 		
@@ -17,6 +20,19 @@ func _ready():
 			shift = !shift
 			
 		add_child(beak)
+		beaks.append(beak)
 
 func _process(delta):
-	pass
+	timer += delta
+	
+	if timer > 0.1 && timer <= 10.0 && event_triggered == 0:
+		event_triggered = 1
+		
+		for beak in beaks:
+			beak.toggle_clap()
+		
+	if timer > 10.0 && event_triggered < 2:
+		event_triggered = 2
+		
+		for beak in beaks:
+			beak.toggle_clap()
