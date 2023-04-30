@@ -79,7 +79,7 @@ func _process(delta):
 	if delta_intensity >= intensity_reactivity_threshold:
 		player.kill()
 		
-	var num_hunting = floor(delta_intensity / intensity_reactivity_threshold * len(beaks))
+	var num_hunting = floor(delta_intensity / intensity_reactivity_threshold * len(beaks)) * 0.75
 	partition_beaks(num_hunting)
 		
 	#print("current_intensity ", current_intensity)
