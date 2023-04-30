@@ -180,7 +180,7 @@ func index_to_level(index):
 		1: current_level = "medium"
 		2: current_level = "high"
 		
-	set_clap_thresholds(current_level)
+	set_clap_thresholds(context["target"])
 	return current_level
 
 func play_mouth_noise(keys):
@@ -202,10 +202,12 @@ func play_mouth_noise(keys):
 
 
 func get_clap_intensity_modifier(value):
-	
 	match value:
 		0.0: return 1.0
 		0.25: return 1.1
 		0.5: return 1.2
 		0.75: return 1.3
 		1.0: return 1.4
+		
+func get_expecting_applause():
+	return applause_expected
