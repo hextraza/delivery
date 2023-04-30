@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://8pp7ap74tt3r"]
+[gd_scene load_steps=5 format=3 uid="uid://8pp7ap74tt3r"]
 
 [ext_resource type="PackedScene" uid="uid://tmmio1hbbk74" path="res://hands.glb" id="1_6mpwr"]
 [ext_resource type="AudioStream" uid="uid://8n3grmxx54o4" path="res://Claps/Clap 1A.wav" id="2_8cb0l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu5kb"]
+albedo_color = Color(0.658824, 0.509804, 0.34902, 1)
+metallic = 0.1
+roughness = 0.5
 
 [sub_resource type="Curve3D" id="Curve3D_qe3ey"]
 _data = {
@@ -61,6 +66,9 @@ bones/38/rotation = Quaternion(0.0354819, 0.439496, 0.177016, 0.879914)
 bones/38/scale = Vector3(1.00559, 1.00559, 1.00559)
 bones/39/rotation = Quaternion(-0.106714, 0.0579227, 0.0253222, 0.992278)
 bones/40/rotation = Quaternion(-0.102417, -0.166426, 0.103231, 0.975273)
+
+[node name="hands2" parent="metarig/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xu5kb")
 
 [node name="AnimationPlayer" parent="." index="1"]
 reset_on_save = false

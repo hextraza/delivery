@@ -144,14 +144,14 @@ node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Head Movement", &"Add2"
 [node name="speaker" instance=ExtResource("1_q1n3f")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/rotation = Quaternion(0.0118192, -1.56255e-08, 0.0164806, 0.999794)
+bones/0/rotation = Quaternion(0.0118192, -1.55898e-08, 0.0164806, 0.999794)
 bones/1/rotation = Quaternion(0.0228306, 0.393481, 0.91882, 0.0205214)
-bones/2/rotation = Quaternion(0.377156, 0.000744004, -0.0115739, 0.926077)
-bones/4/rotation = Quaternion(-0.340322, 5.38911e-08, 0.00838142, 0.940272)
+bones/2/rotation = Quaternion(0.377156, 0.000744003, -0.0115739, 0.926077)
+bones/3/rotation = Quaternion(0.0122408, 0.836287, 0.548039, 0.0112773)
+bones/4/rotation = Quaternion(-0.340322, 5.40485e-08, 0.00838142, 0.940272)
 bones/5/rotation = Quaternion(0.0887752, 0.67314, 0.731282, 0.065021)
-bones/6/rotation = Quaternion(0.538352, -0.0348275, 0.619857, 0.569861)
+bones/6/rotation = Quaternion(0.538352, -0.0348276, 0.619857, 0.569861)
 bones/7/rotation = Quaternion(-0.0754938, 0.0547604, 0.200104, 0.975326)
-bones/8/rotation = Quaternion(0.266668, 0.0444674, -0.793258, 0.545575)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeBlendTree_mif21")

@@ -35,9 +35,14 @@ extends Node3D
 }
 @onready var target_transform := Transform3D(hand_height_path.curve.sample_baked_with_rotation(0.0))
 
+
 var rng = RandomNumberGenerator.new()
 var intensity := 0.0
 var clap_sound_activated := false
+
+var hand_health := 1.0
+var hand_health_cooldown_timer := 0.0
+var last_clap_intensity := 0.0
 
 const CLAP_INTENSITY = 1
 var self_shake_amount := 0
@@ -50,15 +55,22 @@ func _process(delta):
 	
 	camera.rotation_degrees.y = controls.look_yaw
 	camera.rotation_degrees.x = controls.look_pitch
+	
+	if hand_health_cooldown_timer == 0.0:
+		hand_health = clampf(hand_health + (delta * 0.015 * remap(last_clap_intensity, 0.0, 1.0, 0.25, 1.5)), 0.0, 1.0)
+	else:
+		hand_health_cooldown_timer = max(hand_health_cooldown_timer - delta, 0.0)
+	print(hand_health)
 		
 	_handle_screen_shake()
 		
-	if controls.get_just_clapped():
+	if controls.get_just_clapped() && hand_health > 0.0:
 		anim_player.current_animation = "clap"
 	
 	if clap_sound_activated:
 		if anim_player.current_animation_position < 0.34 || is_equal_approx(anim_player.current_animation_position, anim_player.current_animation_length):
 			clap_sound_activated = false
+			hand_health_cooldown_timer = 1.2
 			
 			stop_self_screen_shake()
 			
@@ -78,6 +90,8 @@ func _process(delta):
 		if anim_player.current_animation != "" && anim_player.current_animation_position > 0.34:
 			clap_audio_stream.play()
 			clap_sound_activated = true
+			last_clap_intensity = intensity
+			hand_health -= remap(intensity, 0.0, 1.0, 1.0, 2.5) * 0.0055
 			
 			start_self_screen_shake()
 
