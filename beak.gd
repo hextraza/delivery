@@ -23,19 +23,44 @@ const CLAP_5C = preload("res://Claps/Clap 5C.wav")
 @onready
 var audio_emitter: AudioStreamPlayer3D = get_node("AudioStreamPlayer3D")
 
+@onready var player := get_tree().get_first_node_in_group("player") as Node3D
+@onready var speaker := get_tree().get_first_node_in_group("speaker") as Node3D
+@onready var beak := $beak as Node3D
+@onready var beak_head := $beak/Head as Node3D
+@onready var eye_right := $eye_right as Node3D
+@onready var eye_left := $eye_left as Node3D
+
 var clapping = false
 var clap_speed = 0.0
 var clap_speed_acc = 0.0
 var begin_clap_threshold = 0.0
 var clap_intensity = 1
 var num_claps = 0
+@onready var look_target := speaker
+@onready var look_actual := speaker.global_position
 
 var random = RandomNumberGenerator.new()
 
 func _ready():
 	random.randomize()
+	var right_position := eye_right.global_position
+	var left_position := eye_left.global_position
+	eye_right.reparent(beak_head)
+	eye_left.reparent(beak_head)
+	eye_right.global_position = right_position
+	eye_left.global_position = left_position
+	beak_head.look_at(speaker.global_position)
 
 func _process(delta):
+	look_actual = lerp(look_actual, look_target.global_position, 2.0 * delta)
+	beak_head.look_at(look_actual)
+	
+	if random.randi_range(0, 100) < 1:
+		if random.randf() > 0.5:
+			stare_at(player)
+		else:
+			stare_at(speaker)
+
 	if !clapping:
 		return
 		
@@ -107,3 +132,6 @@ func get_clap_stream():
 			return CLAP_5B
 		elif i == 3:
 			return CLAP_5C
+			
+func stare_at(target: Node3D):
+	look_target = target

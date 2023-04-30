@@ -10,7 +10,7 @@ func _ready():
 	
 	for i in children.size():			
 		var beak = load("res://beak.tscn").instantiate()
-		beak.position = children[i].position
+		beak.global_position = children[i].global_position
 		
 		if shift:
 			var pos = beak.position
@@ -18,7 +18,7 @@ func _ready():
 			
 		if i % 27 == 0:
 			shift = !shift
-			
+		
 		add_child(beak)
 		beaks.append(beak)
 
