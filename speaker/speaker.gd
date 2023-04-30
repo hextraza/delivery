@@ -70,13 +70,13 @@ func _ready():
 
 func set_clap_thresholds(level):
 	match level:
-		"low":
+		0:
 			player_rude_clap_threshold = 1.0 * context["difficulty_mod"]
 			player_expected_clap_threshold = 3.0 * context["difficulty_mod"]
-		"medium":
+		1:
 			player_rude_clap_threshold = 1.3 * context["difficulty_mod"]
 			player_expected_clap_threshold = 2.0 * context["difficulty_mod"]
-		"high":
+		2:
 			player_rude_clap_threshold = 1.5 * context["difficulty_mod"]
 			player_expected_clap_threshold = 1.0 * context["difficulty_mod"]
 
@@ -132,7 +132,7 @@ func _process(delta):
 			step = 0
 			current_line += 1
 			
-			silence = random.randf_range(2.5, 4.5)
+			silence = random.randf_range(5, 12)
 			
 			context["baseline"] = random.randi_range(0, 2)
 			context["target"] = random.randi_range(0, 2)
@@ -144,8 +144,8 @@ func _process(delta):
 		pass #win I guess
 		
 func play_next_sound(context, step):
-	if random.randf() < 0.2:
-		silence = random.randf_range(0.3, 1.0)
+	if random.randf() < 0.1:
+		silence = random.randf_range(0.1, 2.0)
 		
 	if step < context["length"]:
 		play_mouth_noise(get_keys(context, step))
