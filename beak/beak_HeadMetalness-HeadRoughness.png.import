@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4cv625peur0s"
-path.s3tc="res://.godot/imported/beak_HeadMetalness-HeadRoughness.png-914990ab6d22b53941fc7d4368088166.s3tc.ctex"
+path.etc2="res://.godot/imported/beak_HeadMetalness-HeadRoughness.png-914990ab6d22b53941fc7d4368088166.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://beak/beak_HeadMetalness-HeadRoughness.png"
-dest_files=["res://.godot/imported/beak_HeadMetalness-HeadRoughness.png-914990ab6d22b53941fc7d4368088166.s3tc.ctex"]
+dest_files=["res://.godot/imported/beak_HeadMetalness-HeadRoughness.png-914990ab6d22b53941fc7d4368088166.etc2.ctex"]
 
 [params]
 
