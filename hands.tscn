@@ -5,13 +5,13 @@
 
 [sub_resource type="Curve3D" id="Curve3D_qe3ey"]
 _data = {
-"points": PackedVector3Array(0, -0.629378, -1.03398, 0, 0.629378, 1.03398, 0.0847657, -1.98489, -0.607252, 0.00952148, -1.0677, 1.15199, -0.00952148, 1.0677, -1.15199, 0.0735269, 1.90939, -0.663404),
+"points": PackedVector3Array(0.0812055, -1.18674, -0.380547, -0.0812055, 1.18674, 0.380547, 0.0847657, -1.98489, -0.607252, 0.0184267, -1.24382, 0.521244, -0.0184267, 1.24382, -0.521244, 0.0735269, 1.90939, -0.663404),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [node name="hands" instance=ExtResource("1_6mpwr")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.0415757, -0.0909476, 0, 0.0909476, 0.0415757, 0, 0, 0)
 
 [node name="Skeleton3D" parent="metarig" index="0"]
 bones/1/position = Vector3(-1.33861, -1.03821, 0.990287)
@@ -67,7 +67,7 @@ reset_on_save = false
 speed_scale = 6.0
 
 [node name="intensity_height" type="Path3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09251, -0.103884, 0.611402)
+transform = Transform3D(1, 0, 0, 0, 1, -3.08569e-09, 0, -9.28908e-09, 1, -0.09251, -0.103884, 0.611402)
 curve = SubResource("Curve3D_qe3ey")
 
 [node name="clap" type="AudioStreamPlayer3D" parent="." index="3"]

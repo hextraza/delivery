@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c13cvmaso0lym"]
+[gd_scene load_steps=6 format=3 uid="uid://dyhxsu4ceh6b7"]
 
-[ext_resource type="Script" path="res://beak.gd" id="1_l8y12"]
+[ext_resource type="Script" path="res://beak/beak.gd" id="1_l8y12"]
 [ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="1_nr7sw"]
-[ext_resource type="PackedScene" uid="uid://iambhn076v8a" path="res://beak.glb" id="2_3m5d8"]
+[ext_resource type="PackedScene" uid="uid://mch8lmv3kau8" path="res://beak/beak_source.tscn" id="3_qsc65"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qjedc"]
 radius = 0.01
@@ -36,9 +36,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vymvs")
 
 [node name="chair" parent="." instance=ExtResource("1_nr7sw")]
 
-[node name="beak" parent="." instance=ExtResource("2_3m5d8")]
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.539846, 0)
 max_distance = 20.0
 panning_strength = 1.5
+
+[node name="beak" parent="." instance=ExtResource("3_qsc65")]

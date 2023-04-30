@@ -29,6 +29,8 @@ var audio_emitter: AudioStreamPlayer3D = get_node("AudioStreamPlayer3D")
 @onready var beak_head := $beak/Head as Node3D
 @onready var eye_right := $eye_right as Node3D
 @onready var eye_left := $eye_left as Node3D
+@onready var animation_tree := $beak/AnimationTree as AnimationTree
+@onready var animation := $beak/AnimationTree.get("parameters/playback") as AnimationNodeStateMachinePlayback
 
 var clapping = false
 var clap_speed = 0.0
@@ -50,6 +52,7 @@ func _ready():
 	eye_right.global_position = right_position
 	eye_left.global_position = left_position
 	beak_head.look_at(speaker.global_position)
+	animation.travel("Idle")
 
 func _process(delta):
 	look_actual = lerp(look_actual, look_target.global_position, 2.0 * delta)
@@ -62,6 +65,7 @@ func _process(delta):
 			stare_at(speaker)
 
 	if !clapping:
+		animation.travel("Idle")
 		return
 		
 	if clap_speed_acc >= begin_clap_threshold && begin_clap_threshold != 0.0:
@@ -82,10 +86,12 @@ func _process(delta):
 			if num_claps >= 6 && clap_intensity >= 4:
 				audio_emitter.volume_db = random.randf_range(-10, 1)
 				
-			audio_emitter.play(0.0)
 			clap_speed_acc = 0.0
+			animation.travel("Clap")
+			audio_emitter.play(0.0)
 
 func toggle_clap():
+	animation.travel("ClapWaiting")
 	clapping = !clapping
 	clap_speed = random.randf_range(0.4, 1.0) / clap_intensity
 	begin_clap_threshold = random.randf_range(0.0, 3.0) * clap_speed + random.randf_range(0.0, 15.0)

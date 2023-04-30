@@ -1,0 +1,86 @@
+[gd_scene load_steps=19 format=3 uid="uid://mch8lmv3kau8"]
+
+[ext_resource type="PackedScene" uid="uid://iambhn076v8a" path="res://beak/beak.glb" id="1_3xwxe"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ek8g"]
+animation = &"Clap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mlw3k"]
+animation = &"ClapWaiting"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qoste"]
+animation = &"ClapWaiting"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qokcl"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rgv16"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f7rsi"]
+switch_mode = 1
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lw6tx"]
+priority = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yl846"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_13o1f"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ql32"]
+priority = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ysqcl"]
+xfade_time = 1.0
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kbfd7"]
+xfade_time = 0.5
+priority = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ladr6"]
+xfade_time = 0.5
+priority = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6xkgk"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ejt42"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ro8nj"]
+states/Clap/node = SubResource("AnimationNodeAnimation_7ek8g")
+states/Clap/position = Vector2(863, 42)
+states/ClapWaiting/node = SubResource("AnimationNodeAnimation_qoste")
+states/ClapWaiting/position = Vector2(556, -94)
+"states/ClapWaiting 2/node" = SubResource("AnimationNodeAnimation_mlw3k")
+"states/ClapWaiting 2/position" = Vector2(768.34, -85.5325)
+states/Idle/node = SubResource("AnimationNodeAnimation_rgv16")
+states/Idle/position = Vector2(348.5, 88)
+"states/Idle 2/node" = SubResource("AnimationNodeAnimation_qokcl")
+"states/Idle 2/position" = Vector2(413.84, -37.065)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_f7rsi"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_lw6tx"), "ClapWaiting", "ClapWaiting 2", SubResource("AnimationNodeStateMachineTransition_yl846"), "ClapWaiting 2", "ClapWaiting", SubResource("AnimationNodeStateMachineTransition_13o1f"), "ClapWaiting 2", "Clap", SubResource("AnimationNodeStateMachineTransition_2ql32"), "Clap", "ClapWaiting 2", SubResource("AnimationNodeStateMachineTransition_ysqcl"), "Idle 2", "ClapWaiting", SubResource("AnimationNodeStateMachineTransition_kbfd7"), "ClapWaiting", "Idle 2", SubResource("AnimationNodeStateMachineTransition_ladr6"), "Idle", "Idle 2", SubResource("AnimationNodeStateMachineTransition_6xkgk"), "Idle 2", "Idle", SubResource("AnimationNodeStateMachineTransition_ejt42")]
+graph_offset = Vector2(275.34, -136.065)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v4t2u"]
+
+[node name="beak" instance=ExtResource("1_3xwxe")]
+
+[node name="Skeleton3D" parent="ArmatureHands" index="0"]
+bones/1/rotation = Quaternion(0.721457, -0.0003455, 0.0210181, 0.69214)
+bones/2/rotation = Quaternion(0.721457, -0.000345502, 0.0210181, 0.69214)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeStateMachine_ro8nj")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+process_callback = 0
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_v4t2u")

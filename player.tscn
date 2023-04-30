@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://8pp7ap74tt3r" path="res://hands.tscn" id="3_ga1vf"]
 
 [node name="player" type="Node3D" groups=["player"]]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
 script = ExtResource("1_g7j8t")
 
 [node name="Controls" parent="." instance=ExtResource("2_k3v4b")]
@@ -13,3 +14,4 @@ script = ExtResource("1_g7j8t")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.111776, -0.390207)
 
 [node name="hands" parent="." instance=ExtResource("3_ga1vf")]
+transform = Transform3D(0.1, 0, 0, 0, 0.0701407, -0.0712761, 0, 0.0712761, 0.0701407, 0, -0.130274, 0)

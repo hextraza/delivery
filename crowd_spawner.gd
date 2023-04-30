@@ -9,8 +9,8 @@ func _ready():
 	var children = self.get_children()
 	
 	for i in children.size():			
-		var beak = load("res://beak.tscn").instantiate()
-		beak.global_position = children[i].global_position
+		var beak = load("res://beak/beak.tscn").instantiate()
+		beak.position = children[i].position
 		
 		if shift:
 			var pos = beak.position
