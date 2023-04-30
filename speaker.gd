@@ -27,10 +27,11 @@ var random = RandomNumberGenerator.new()
 var num_lines = 25
 var current_line = 0
 var step = 0
+var silence = 0.0
 
 var context = {
 	"baseline": 0,
-	"target": 1,
+	"target": 2,
 	"length": 10,
 	"tempo": 1.0
 }
@@ -39,22 +40,37 @@ func _ready():
 	random.randomize()
 
 func _process(delta):
-	if !audio_emitter.playing:
-		var line_finished = play_next_sound(context, step)
-		step += 1
+	if silence > 0.0:
+		silence -= delta
+		
+	if !audio_emitter.playing && silence <= 0.0:
+		var result = play_next_sound(context, step)
+		var line_finished = result[0]
+		var step_diff = result[1]
+		step += step_diff
 		
 		if line_finished:
 			step = 0
 			current_line += 1
+			
+			silence = random.randf_range(2, 4)
+			
+			context["baseline"] = random.randi_range(0, 2)
+			context["target"] = random.randi_range(0, 2)
+			context["length"] = random.randi_range(6, 25)
+			context["tempo"] = random.randf_range(0.9, 1.2)
 
 	if current_line >= num_lines:
 		pass #win I guess
 		
 func play_next_sound(context, step):
+	if random.randf() < 0.2:
+		silence = random.randf_range(0.3, 1.0)
+		
 	if step < context["length"]:
 		play_mouth_noise(get_keys(context, step))
-		return false
-	return true
+		return [false, 1.0]
+	return [true, 1.0]
 
 func get_keys(context, step):
 	var baseline = context["baseline"]
@@ -66,7 +82,7 @@ func get_keys(context, step):
 
 	var num_divisions = abs(target - baseline)
 	if num_divisions == 0:
-		level = index_to_level(0)
+		level = index_to_level(baseline)
 		transition = "neutral"
 	elif num_divisions == 1:
 		if step < floor(length / 2):
@@ -79,8 +95,22 @@ func get_keys(context, step):
 			level = index_to_level(target)
 			transition = "neutral"
 	elif num_divisions == 2:
-		pass
-		
+		if step < floor(length / 3):
+			level = index_to_level(baseline)
+			transition = "neutral"
+		elif step == floor(length / 3):
+			level = index_to_level(baseline)
+			transition = "rising" if sign(target - baseline) > 0 else "falling"
+		elif step < floor((2 * length) / 3):
+			level = index_to_level(2)
+			transition = "neutral"
+		elif step == floor((2 * length) / 3):
+			level = index_to_level(2)
+			transition = "rising" if sign(target - baseline) > 0 else "falling"
+		else:
+			level = index_to_level(target)
+			transition = "neutral"
+	
 	return [level, transition]
 
 func index_to_level(index):
@@ -90,10 +120,12 @@ func index_to_level(index):
 		2: return "high"
 	
 func play_mouth_noise(keys):
+	
+	print(context)
+	
 	var level = keys[0]
 	var transition = keys[1]
-	print(level, transition)
-	audio_emitter.stream = sound_dict[level][transition][random.randi_range(0, 2)]
-	audio_emitter.pitch_scale = random.randf_range(0.8, 1.2)
+	audio_emitter.stream = sound_dict[level][transition][random.randi_range(0, 3)]
+	audio_emitter.pitch_scale = random.randf_range(0.95, 1.05)
 	audio_emitter.volume_db = random.randf_range(-2, 2)
 	audio_emitter.play(0.0)
