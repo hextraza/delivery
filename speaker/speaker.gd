@@ -75,10 +75,10 @@ func set_clap_thresholds(level):
 			player_expected_clap_threshold = 3.0 * context["difficulty_mod"]
 		1:
 			player_rude_clap_threshold = 1.3 * context["difficulty_mod"]
-			player_expected_clap_threshold = 2.0 * context["difficulty_mod"]
+			player_expected_clap_threshold = 2.5 * context["difficulty_mod"]
 		2:
 			player_rude_clap_threshold = 1.5 * context["difficulty_mod"]
-			player_expected_clap_threshold = 1.0 * context["difficulty_mod"]
+			player_expected_clap_threshold = 2.0 * context["difficulty_mod"]
 
 func _process(delta):
 	if silence > 0.0:
@@ -138,7 +138,7 @@ func _process(delta):
 			context["target"] = random.randi_range(0, 2)
 			context["length"] = random.randi_range(6, 25)
 			context["tempo"] = random.randf_range(0.9, 1.2)
-			context["difficulty_mod"] = random.randf_range(0.5, 1.3)
+			context["difficulty_mod"] = random.randf_range(0.9, 1.4)
 
 	if current_line >= num_lines:
 		pass #win I guess
