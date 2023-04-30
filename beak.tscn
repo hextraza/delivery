@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dk5po7ix2p4bx"]
 
 [ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="1_nr7sw"]
 [ext_resource type="PackedScene" uid="uid://iambhn076v8a" path="res://beak.glb" id="2_3m5d8"]

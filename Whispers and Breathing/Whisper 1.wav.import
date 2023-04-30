@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lu7s2g3oesu8"
+path="res://.godot/imported/Whisper 1.wav-2d24a754e04332cb78170636dd9dc0e0.sample"
+
+[deps]
+
+source_file="res://Whispers and Breathing/Whisper 1.wav"
+dest_files=["res://.godot/imported/Whisper 1.wav-2d24a754e04332cb78170636dd9dc0e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

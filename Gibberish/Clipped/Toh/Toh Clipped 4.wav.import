@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdolhv53tqeuv"
+path="res://.godot/imported/Toh Clipped 4.wav-85ddc12d036b5711865a1a86b255f848.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Toh/Toh Clipped 4.wav"
+dest_files=["res://.godot/imported/Toh Clipped 4.wav-85ddc12d036b5711865a1a86b255f848.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

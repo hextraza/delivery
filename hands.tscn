@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8pp7ap74tt3r"]
+[gd_scene load_steps=4 format=3 uid="uid://8pp7ap74tt3r"]
 
 [ext_resource type="PackedScene" uid="uid://tmmio1hbbk74" path="res://hands.glb" id="1_6mpwr"]
+[ext_resource type="AudioStream" uid="uid://8n3grmxx54o4" path="res://Claps/Clap 1A.wav" id="2_8cb0l"]
 
 [sub_resource type="Curve3D" id="Curve3D_qe3ey"]
 _data = {
@@ -12,32 +13,32 @@ point_count = 2
 [node name="hands" instance=ExtResource("1_6mpwr")]
 
 [node name="Skeleton3D" parent="metarig" index="0"]
-bones/1/position = Vector3(-4.77926, -1.03486, -0.395972)
-bones/1/rotation = Quaternion(0.238223, 0.903227, -0.352468, -0.0565393)
+bones/1/position = Vector3(-1.33861, -1.03821, 0.990287)
+bones/1/rotation = Quaternion(0.3729, 0.860255, -0.209626, -0.277423)
 bones/2/position = Vector3(-0.314975, 0.493732, 0.151794)
 bones/2/rotation = Quaternion(0.0483416, -0.680492, -0.121853, 0.720934)
-bones/3/rotation = Quaternion(0.0877211, 0.0593392, 0.140895, 0.984344)
-bones/4/rotation = Quaternion(0.0288349, 0.0388992, 0.0650218, 0.996708)
+bones/3/rotation = Quaternion(0.0971051, 0.057931, 0.163829, 0.979987)
+bones/4/rotation = Quaternion(0.0124697, 0.0394617, 0.00930481, 0.9991)
 bones/5/rotation = Quaternion(-0.0379845, -0.057602, -0.00982028, 0.997568)
 bones/6/rotation = Quaternion(0.181763, -0.567369, -0.159343, 0.787188)
 bones/7/rotation = Quaternion(0.025533, -0.225581, 0.0582731, 0.972145)
 bones/8/rotation = Quaternion(0.152222, 0.0383401, 0.175884, 0.971814)
 bones/9/position = Vector3(-0.0959471, 0.541859, 0.112386)
 bones/9/rotation = Quaternion(0.0299895, -0.696953, -0.13979, 0.702721)
-bones/10/rotation = Quaternion(0.103809, 0.118295, 0.18097, 0.970814)
-bones/11/rotation = Quaternion(-0.0155862, 0.105183, 0.0309371, 0.993849)
+bones/10/rotation = Quaternion(0.110264, 0.115498, 0.215395, 0.963383)
+bones/11/rotation = Quaternion(-0.0192016, 0.108013, -0.0203437, 0.993756)
 bones/12/rotation = Quaternion(0.0165449, -0.142253, -0.0125021, 0.989613)
 bones/13/position = Vector3(0.0899942, 0.541773, 0.0255905)
 bones/13/rotation = Quaternion(0.00369269, -0.722578, -0.159564, 0.672612)
-bones/14/rotation = Quaternion(0.0945645, 0.20606, 0.172193, 0.958617)
-bones/15/rotation = Quaternion(0.00998425, 0.0547449, 0.0532602, 0.997029)
+bones/14/rotation = Quaternion(0.10831, 0.196948, 0.206705, 0.952236)
+bones/15/rotation = Quaternion(0.00377454, 0.0679779, -0.0163955, 0.997545)
 bones/16/rotation = Quaternion(0.0291588, -0.196647, 0.00122737, 0.98004)
 bones/17/position = Vector3(0.261898, 0.519468, -0.0856938)
 bones/17/rotation = Quaternion(-0.0584525, -0.743221, -0.151984, 0.648927)
-bones/18/rotation = Quaternion(0.108809, 0.357811, 0.0526145, 0.925939)
-bones/19/rotation = Quaternion(-0.00637695, -0.0433274, 0.123987, 0.991317)
+bones/18/rotation = Quaternion(0.109024, 0.357565, 0.0635268, 0.925324)
+bones/19/rotation = Quaternion(0.0121424, -0.0526645, 0.0607353, 0.99669)
 bones/20/rotation = Quaternion(0.0836805, -0.193927, -0.0230856, 0.977168)
-bones/21/position = Vector3(4.71107, -0.956318, 0.52678)
+bones/21/position = Vector3(0.0202334, -0.956318, -0.106624)
 bones/21/rotation = Quaternion(-0.0134136, 0.147627, -0.0599707, 0.987132)
 bones/22/rotation = Quaternion(-0.00621852, -0.679183, 0.0336763, 0.733169)
 bones/23/rotation = Quaternion(0.0372495, 0.0266379, 0.196312, 0.979472)
@@ -62,7 +63,12 @@ bones/40/rotation = Quaternion(-0.102417, -0.166426, 0.103231, 0.975273)
 
 [node name="AnimationPlayer" parent="." index="1"]
 reset_on_save = false
+speed_scale = 6.0
 
 [node name="intensity_height" type="Path3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09251, -0.103884, 0.611402)
 curve = SubResource("Curve3D_qe3ey")
+
+[node name="clap" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("2_8cb0l")
+max_polyphony = 3

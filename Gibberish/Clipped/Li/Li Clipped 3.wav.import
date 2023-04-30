@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bagu0ev4chhy7"
+path="res://.godot/imported/Li Clipped 3.wav-839c75a307b00b170a34794311344b64.sample"
+
+[deps]
+
+source_file="res://Gibberish/Clipped/Li/Li Clipped 3.wav"
+dest_files=["res://.godot/imported/Li Clipped 3.wav-839c75a307b00b170a34794311344b64.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

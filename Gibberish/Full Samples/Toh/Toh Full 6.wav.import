@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cybwa6qxmh5s2"
+path="res://.godot/imported/Toh Full 6.wav-b16a81601f6d382abd934adbd90a5173.sample"
+
+[deps]
+
+source_file="res://Gibberish/Full Samples/Toh/Toh Full 6.wav"
+dest_files=["res://.godot/imported/Toh Full 6.wav-b16a81601f6d382abd934adbd90a5173.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
