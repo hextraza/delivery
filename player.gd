@@ -51,7 +51,7 @@ func _process(delta):
 		anim_player.current_animation = "clap"
 	
 	if clap_sound_activated:
-		if anim_player.current_animation_position < 0.34:
+		if anim_player.current_animation_position < 0.34 || is_equal_approx(anim_player.current_animation_position, anim_player.current_animation_length):
 			clap_sound_activated = false
 			var random_sample = rng.randi_range(0, 2)
 			if intensity == 0:

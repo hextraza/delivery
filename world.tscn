@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32244, 0.989128, -3.13994)
 [node name="podium" parent="." instance=ExtResource("3_c6c5s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.369718, 1.90098, -3.90367)
 
-[node name="speaker" parent="." instance=ExtResource("4_cpa6b")]
+[node name="speaker" parent="." groups=["speaker"] instance=ExtResource("4_cpa6b")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.445459, 3.51181, -4.59491)
 
 [node name="crowd spawn points" type="Node3D" parent="."]
