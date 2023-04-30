@@ -88,12 +88,12 @@ func _process(delta):
 		silence = 0.0
 		silence_length = 0.0
 		
-	#print("applause_expected: ", applause_expected)
-	#print("player_expected_clap_threshold: ", player_expected_clap_threshold)
-	#print("player_rude_clap_threshold: ", player_rude_clap_threshold)
-	#print("player_acc: ", player_clap_acc)
-	#print("player_immune: ", player_immune, "\n")
-	#print("Modded clap threshold: ", player_expected_clap_threshold * (silence_length / 4 * context["difficulty_mod"]))
+	print("applause_expected: ", applause_expected)
+	print("player_expected_clap_threshold: ", player_expected_clap_threshold)
+	print("player_rude_clap_threshold: ", player_rude_clap_threshold)
+	print("player_acc: ", player_clap_acc)
+	print("player_immune: ", player_immune, "\n")
+	print("Modded clap threshold: ", silence_length / player_expected_clap_threshold * context["difficulty_mod"])
 		
 	if player_audio.playing == true:
 		player_clap_acc += delta * get_clap_intensity_modifier(controls.get_clap_strength())
@@ -105,7 +105,7 @@ func _process(delta):
 			player_clap_acc = 0.0
 			player_reset_acc = 0.0
 	
-	if applause_expected && player_clap_acc >= player_expected_clap_threshold * (silence_length / context["difficulty_mod"]):
+	if applause_expected && player_clap_acc >= (silence_length / player_expected_clap_threshold * context["difficulty_mod"]):
 		head_anim.travel("Idle")
 		player_immune = true
 	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold:
@@ -142,9 +142,9 @@ func _process(delta):
 			
 			context["baseline"] = random.randi_range(0, 2)
 			context["target"] = random.randi_range(0, 2)
-			context["length"] = random.randi_range(6, 25)
+			context["length"] = random.randi_range(10, 25)
 			context["tempo"] = random.randf_range(0.9, 1.2)
-			context["difficulty_mod"] = random.randf_range(0.9, 1.4)
+			context["difficulty_mod"] = random.randf_range(0.8, 1.2)
 
 	if current_line >= num_lines:
 		pass #win I guess
@@ -231,10 +231,10 @@ func play_mouth_noise(keys):
 func get_clap_intensity_modifier(value):
 	match value:
 		0.0: return 1.0
-		0.25: return 1.1
-		0.5: return 1.2
-		0.75: return 1.3
-		1.0: return 1.4
+		0.25: return 1.3
+		0.5: return 1.4
+		0.75: return 1.5
+		1.0: return 1.8
 		
 func get_expecting_applause():
 	return applause_expected

@@ -73,9 +73,9 @@ func _process(delta):
 	if delta_intensity >= intensity_reactivity_threshold:
 		player.kill()
 		
-	print("current_intensity ", current_intensity)
-	print("delta_intensity ", delta_intensity)
-	print("delta_intensity_reset_acc ", delta_intensity_reset_acc, "\n")
+	#print("current_intensity ", current_intensity)
+	#print("delta_intensity ", delta_intensity)
+	#print("delta_intensity_reset_acc ", delta_intensity_reset_acc, "\n")
 		
 	# REALLY REALLY BAD DO NOT DO THIS
 	for beak in beaks:
@@ -87,11 +87,10 @@ func _process(delta):
 	speaker_wanted_applause = speaker_wants_applause
 	
 
-
 func get_clap_intensity_modifier(value):
 	match value:
 		0.0: return 0.0
-		0.25: return 1.1
-		0.5: return 1.2
-		0.75: return 1.3
-		1.0: return 1.5
+		0.25: return 0.5
+		0.5: return 0.7
+		0.75: return 0.9
+		1.0: return 1.1
