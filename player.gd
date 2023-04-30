@@ -2,8 +2,6 @@ extends Node3D
 
 @onready var controls := $Controls as Controls
 @onready var camera := $Camera as Camera3D
-@onready var arms := $Arms as Node3D
-@onready var hands := $Arms/Hands as Node3D
 @onready var hands_skeleton := $hands/metarig/Skeleton3D as Skeleton3D
 @onready var anim_player := $hands/AnimationPlayer as AnimationPlayer
 @onready var hand_height_path := $hands/intensity_height as Path3D
@@ -41,11 +39,14 @@ var rng = RandomNumberGenerator.new()
 var intensity := 0.0
 var clap_sound_activated := false
 
-func _process(_delta):
+func _process(delta):
 	hands_skeleton.transform.origin = lerp(hands_skeleton.transform.origin, target_transform.origin, 0.3)
 	hands_skeleton.transform.basis = lerp(hands_skeleton.transform.basis, target_transform.basis, 0.3)
 	clap_audio_stream.transform.origin = hands_skeleton.transform.origin
 	
+	camera.rotation_degrees.y = controls.look_yaw
+	camera.rotation_degrees.x = controls.look_pitch
+		
 	if controls.get_just_clapped():
 		anim_player.current_animation = "clap"
 	
@@ -65,7 +66,7 @@ func _process(_delta):
 				clap_audio_stream.stream = claps["1"][random_sample]
 			clap_audio_stream.pitch_scale = rng.randf_range(0.75, 1.25)
 	else:
-		if anim_player.current_animation_position > 0.34:
+		if anim_player.current_animation != "" && anim_player.current_animation_position > 0.34:
 			clap_audio_stream.play()
 			clap_sound_activated = true
 
