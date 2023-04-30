@@ -8,6 +8,8 @@ var intensity_reactivity_threshold = 2.0
 var delta_intensity = 0.0
 var speaker_wants_applause = false
 var speaker_wanted_applause = false
+var delta_intensity_reset_acc = 0.0
+var delta_intensity_reset_threshold = 4.0
 
 @onready
 var speaker = get_tree().get_first_node_in_group("speaker")
@@ -44,13 +46,37 @@ func _process(delta):
 	speaker_wants_applause = speaker.get_expecting_applause()
 	
 	if player_audio.playing == true:
-		current_intensity += delta * 0.8 * get_clap_intensity_modifier(controls.get_clap_strength())
+		var vel = delta * 0.8 * get_clap_intensity_modifier(controls.get_clap_strength())
+		
+		if vel != 0.0:
+			delta_intensity_reset_acc = 0.0
+			current_intensity += vel
+			delta_intensity += vel
 	else:
+		if delta_intensity >= 0.0:
+			delta_intensity -= delta * 0.08
+		else:
+			delta_intensity = 0.0
+			
 		if current_intensity > 0.01:
 			current_intensity -= delta * 0.1
 		else:
 			current_intensity = 0.01
 	
+	if delta_intensity >= 0.0:
+		delta_intensity_reset_acc += delta
+		
+	if delta_intensity_reset_acc >= delta_intensity_reset_threshold:
+		delta_intensity = 0.0
+		delta_intensity_reset_acc = 0.0
+		
+	if delta_intensity >= intensity_reactivity_threshold:
+		player.kill()
+		
+	print("current_intensity ", current_intensity)
+	print("delta_intensity ", delta_intensity)
+	print("delta_intensity_reset_acc ", delta_intensity_reset_acc, "\n")
+		
 	# REALLY REALLY BAD DO NOT DO THIS
 	for beak in beaks:
 		beak.set_intensity(ceil(current_intensity))
