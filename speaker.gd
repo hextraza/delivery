@@ -28,6 +28,7 @@ var num_lines = 25
 var current_line = 0
 var step = 0
 var silence = 0.0
+var last_choice = -1
 
 var context = {
 	"baseline": 0,
@@ -118,14 +119,22 @@ func index_to_level(index):
 		0: return "low"
 		1: return "medium"
 		2: return "high"
-	
+
 func play_mouth_noise(keys):
-	
 	print(context)
-	
 	var level = keys[0]
 	var transition = keys[1]
-	audio_emitter.stream = sound_dict[level][transition][random.randi_range(0, 3)]
+	var choices = [0, 1, 2, 3]
+
+	if last_choice != -1:
+		choices.erase(last_choice)
+
+	var choice = choices[random.randi_range(0, len(choices) - 1)]
+
+	last_choice = choice
+
+	audio_emitter.stream = sound_dict[level][transition][choice]
 	audio_emitter.pitch_scale = random.randf_range(0.95, 1.05)
 	audio_emitter.volume_db = random.randf_range(-2, 2)
 	audio_emitter.play(0.0)
+
