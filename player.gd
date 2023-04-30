@@ -56,6 +56,13 @@ func _process(delta):
 	camera.rotation_degrees.y = controls.look_yaw
 	camera.rotation_degrees.x = controls.look_pitch
 	
+	if hand_health < 1:
+		var hand_shake_amount: float = remap(1 - abs(hand_health), 0.0, 1.0, 0.0, 20.0) * delta
+		var dx: float = hand_shake_amount * rng.randf()
+		var dy: float = hand_shake_amount * rng.randf()
+		var dz: float = hand_shake_amount * rng.randf()
+		hands_skeleton.position += Vector3(dx, dy, dz)
+	
 	if hand_health_cooldown_timer == 0.0:
 		hand_health = clampf(hand_health + (delta * 0.015 * remap(last_clap_intensity, 0.0, 1.0, 0.25, 1.5)), 0.0, 1.0)
 	else:
