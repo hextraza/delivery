@@ -39,6 +39,10 @@ var rng = RandomNumberGenerator.new()
 var intensity := 0.0
 var clap_sound_activated := false
 
+const CLAP_INTENSITY = 1
+var self_shake_amount := 0
+var external_shake_amount := 0
+
 func _process(delta):
 	hands_skeleton.transform.origin = lerp(hands_skeleton.transform.origin, target_transform.origin, 0.3)
 	hands_skeleton.transform.basis = lerp(hands_skeleton.transform.basis, target_transform.basis, 0.3)
@@ -47,12 +51,17 @@ func _process(delta):
 	camera.rotation_degrees.y = controls.look_yaw
 	camera.rotation_degrees.x = controls.look_pitch
 		
+	_handle_screen_shake()
+		
 	if controls.get_just_clapped():
 		anim_player.current_animation = "clap"
 	
 	if clap_sound_activated:
 		if anim_player.current_animation_position < 0.34 || is_equal_approx(anim_player.current_animation_position, anim_player.current_animation_length):
 			clap_sound_activated = false
+			
+			stop_self_screen_shake()
+			
 			var random_sample = rng.randi_range(0, 2)
 			if intensity == 0:
 				clap_audio_stream.stream = claps["0"][random_sample]
@@ -69,6 +78,8 @@ func _process(delta):
 		if anim_player.current_animation != "" && anim_player.current_animation_position > 0.34:
 			clap_audio_stream.play()
 			clap_sound_activated = true
+			
+			start_self_screen_shake()
 
 	process_intensity(controls.get_clap_strength())
 
@@ -91,3 +102,38 @@ func process_intensity(i: float):
 			clap_audio_stream.stream = claps["1"][random_sample]
 	clap_audio_stream.pitch_scale = rng.randf_range(0.75, 1.25)
 	self.intensity = i
+
+
+func _handle_screen_shake():
+	var amount = self_shake_amount + external_shake_amount
+	
+	if amount != 0:
+		camera.set_fov(75 + (amount * rng.randf_range(-1, 1)))
+		camera.set_v_offset(amount / 100.0 * rng.randf_range(-1, 1))
+		camera.set_h_offset(amount / 100.0 * rng.randf_range(-1, 1))
+	else:
+		camera.set_fov(75)
+		camera.set_v_offset(0)
+		camera.set_h_offset(0)
+
+
+func start_self_screen_shake():
+	self_shake_amount = intensity * 2
+
+
+func stop_self_screen_shake():
+	self_shake_amount = 0
+
+
+func is_self_shaking():
+	return self_shake_amount != 0
+
+
+func add_external_screen_shake(amount = 1):
+	external_shake_amount += amount
+
+
+func subtract_external_screen_shake(amount = 1):
+	external_shake_amount -= amount
+	if external_shake_amount < 0:
+		external_shake_amount = 0
