@@ -60,7 +60,6 @@ func _process(delta):
 		hand_health = clampf(hand_health + (delta * 0.015 * remap(last_clap_intensity, 0.0, 1.0, 0.25, 1.5)), 0.0, 1.0)
 	else:
 		hand_health_cooldown_timer = max(hand_health_cooldown_timer - delta, 0.0)
-	print(hand_health)
 		
 	_handle_screen_shake()
 		
@@ -70,7 +69,11 @@ func _process(delta):
 	if clap_sound_activated:
 		if anim_player.current_animation_position < 0.34 || is_equal_approx(anim_player.current_animation_position, anim_player.current_animation_length):
 			clap_sound_activated = false
-			hand_health_cooldown_timer = 1.2
+
+			if hand_health < 0:
+				hand_health_cooldown_timer = 4.0
+			else:
+				hand_health_cooldown_timer = 1.2
 			
 			stop_self_screen_shake()
 			

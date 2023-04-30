@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfc8867kev0wp"]
+
+[ext_resource type="PackedScene" uid="uid://xphw4r1sfvyo" path="res://sign.glb" id="1_khe4r"]
+
+[node name="sign" instance=ExtResource("1_khe4r")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 2.5, 0, 0, 0)

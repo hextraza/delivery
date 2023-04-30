@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhs4hohguvrvb"]
+
+[ext_resource type="Script" path="res://sign.gd" id="1_l5bm3"]
+[ext_resource type="PackedScene" uid="uid://bfc8867kev0wp" path="res://sign_emissive.tscn" id="2_8t7lg"]
+[ext_resource type="AudioStream" uid="uid://dpxdsauaqqlbn" path="res://Sign Toggle On.wav" id="3_a1i0v"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_l5bm3")
+
+[node name="sign2" parent="." instance=ExtResource("2_8t7lg")]
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.00555336, 0.795454, -0.605988, 0.00423056, 0.605974, 0.795474, 0.999976, -0.00698123, -2.64886e-08, -2.98631, 5.25849, 0)
+light_color = Color(0.00784314, 1, 0.0235294, 1)
+light_energy = 1000.0
+light_size = 10.0
+spot_range = 15.0
+spot_angle = 50.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_a1i0v")
+volume_db = 3.0

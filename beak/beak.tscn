@@ -23,13 +23,13 @@ proximity_fade_distance = 0.1
 script = ExtResource("1_l8y12")
 
 [node name="eye_right" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0598873, 0.945378, -0.148502)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.0598873, 0.945378, -0.148502)
 mesh = SubResource("CapsuleMesh_qjedc")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_vymvs")
 
 [node name="eye_left" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0520928, 0.941078, -0.148981)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0520928, 0.941078, -0.148981)
 mesh = SubResource("CapsuleMesh_qjedc")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_vymvs")
