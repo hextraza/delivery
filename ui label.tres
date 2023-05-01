@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dw3rypkwxfxje"]
+
+[ext_resource type="FontFile" uid="uid://cfrjwfdilsn77" path="res://SpecialElite-Regular.ttf" id="1_uranr"]
+
+[resource]
+font = ExtResource("1_uranr")
+font_size = 64
+font_color = Color(1, 0, 0, 1)

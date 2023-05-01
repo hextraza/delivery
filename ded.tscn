@@ -1,13 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://du08xvsghx2ev"]
+[gd_scene load_steps=3 format=3 uid="uid://bc2ttx2tiincu"]
 
 [ext_resource type="Script" path="res://ded.gd" id="1_04qmq"]
+[ext_resource type="LabelSettings" uid="uid://dw3rypkwxfxje" path="res://ui label.tres" id="2_ogj48"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Canvas" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -13.0
+offset_right = 75.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_04qmq")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 806.0
-offset_top = 494.0
-offset_right = 1077.0
-offset_bottom = 592.0
-text = "You died. Try again."
+layout_mode = 2
+text = "Please, clap."
+label_settings = ExtResource("2_ogj48")
+horizontal_alignment = 1
+vertical_alignment = 1
