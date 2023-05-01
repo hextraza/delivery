@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bky8v4euitjqj" path="res://player.tscn" id="6_xb7bm"]
 [ext_resource type="PackedScene" uid="uid://b5nfu5wieic4c" path="res://speaker/speaker.tscn" id="7_nxm8g"]
 [ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="7_weijy"]
-[ext_resource type="PackedScene" path="res://sign.tscn" id="8_hvrwm"]
+[ext_resource type="PackedScene" uid="uid://dhs4hohguvrvb" path="res://sign.tscn" id="8_hvrwm"]
 
 [sub_resource type="Environment" id="Environment_h8s3k"]
 background_mode = 1

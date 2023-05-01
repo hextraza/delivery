@@ -158,11 +158,11 @@ func _process(delta):
 		angry = true
 
 		
-	print("applause_expected: ", applause_expected)
-	print("player_expected_clap_threshold: ", player_expected_clap_threshold)
-	print("player_rude_clap_threshold: ", player_rude_clap_threshold)
-	print("player_acc: ", player_clap_acc)
-	print("player_immune: ", player_immune, "\n")
+	#print("applause_expected: ", applause_expected)
+	#print("player_expected_clap_threshold: ", player_expected_clap_threshold)
+	#print("player_rude_clap_threshold: ", player_rude_clap_threshold)
+	#print("player_acc: ", player_clap_acc)
+	#print("player_immune: ", player_immune, "\n")
 		
 	if player_audio.playing == true:
 		player_clap_acc += delta * get_clap_intensity_modifier(controls.get_clap_strength())

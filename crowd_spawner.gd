@@ -118,7 +118,7 @@ func partition_beaks(num_hunting_beaks):
 func get_clap_intensity_modifier(value):
 	match value:
 		0.0: return 0.0
-		0.25: return 0.5
-		0.5: return 0.7
-		0.75: return 0.9
-		1.0: return 1.1
+		0.25: return 0.4
+		0.5: return 0.5
+		0.75: return 1
+		1.0: return 1.5

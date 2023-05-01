@@ -51,6 +51,8 @@ var dead = false
 var bus_db = 0.0
 
 func _process(delta):
+	print(hand_health)
+	
 	if dead:
 		bus_db -= delta
 		AudioServer.set_bus_volume_db(bus_db, 0)
@@ -76,7 +78,7 @@ func _process(delta):
 		hands_skeleton.position += Vector3(dx, dy, dz)
 	
 	if hand_health_cooldown_timer == 0.0:
-		hand_health = clampf(hand_health + (delta * 0.015 * remap(last_clap_intensity, 0.0, 1.0, 0.25, 1.5)), 0.0, 1.0)
+		hand_health = clampf(hand_health + (delta * 0.015 * remap(last_clap_intensity, 0.0, 1.0, 0.25, 2.0)), 0.0, 1.0)
 	else:
 		hand_health_cooldown_timer = max(hand_health_cooldown_timer - delta, 0.0)
 		
@@ -113,7 +115,7 @@ func _process(delta):
 			clap_audio_stream.play()
 			clap_sound_activated = true
 			last_clap_intensity = intensity
-			hand_health -= remap(intensity, 0.0, 1.0, 1.0, 2.5) * 0.0055
+			hand_health -= remap(intensity, 0.0, 1.0, 0.75, 3) * 0.0055
 			
 			start_self_screen_shake()
 
