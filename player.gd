@@ -47,8 +47,22 @@ var last_clap_intensity := 0.0
 const CLAP_INTENSITY = 1
 var self_shake_amount := 0
 var external_shake_amount := 0
+var dead = false
+var bus_db = 0.0
 
 func _process(delta):
+	if dead:
+		bus_db -= delta
+		AudioServer.set_bus_volume_db(bus_db, 0)
+		
+		print(bus_db)
+		
+		if bus_db < -5.0:
+			get_tree().change_scene_to_file("res://ded.tscn")
+		return
+	else:
+		bus_db = AudioServer.get_bus_volume_db(0)
+
 	hands_skeleton.transform.origin = lerp(hands_skeleton.transform.origin, target_transform.origin, 0.3)
 	hands_skeleton.transform.basis = lerp(hands_skeleton.transform.basis, target_transform.basis, 0.3)
 	clap_audio_stream.transform.origin = hands_skeleton.transform.origin
@@ -128,7 +142,10 @@ func process_intensity(i: float):
 	self.intensity = i
 
 func kill():
-	add_external_screen_shake(200)
+	if dead == false:
+		dead = true
+		add_external_screen_shake(1)
+		Fade.fade_out(5.0)
 
 func _handle_screen_shake():
 	var amount = self_shake_amount + external_shake_amount

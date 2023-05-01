@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://du08xvsghx2ev"]
+
+[ext_resource type="Script" path="res://ded.gd" id="1_04qmq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_04qmq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 806.0
+offset_top = 494.0
+offset_right = 1077.0
+offset_bottom = 592.0
+text = "You died. Try again."
