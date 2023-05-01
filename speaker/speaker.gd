@@ -143,7 +143,8 @@ func _process(delta):
 	
 	heavy_breathing.volume_db = remap(player_clap_acc, 0.0, player_rude_clap_threshold, 1.0, 6.0)
 	if angry == true:
-		ears_ringing.volume_db = remap(player_clap_acc, 0.0, player_rude_clap_threshold, -40.0, 0.0)
+		print(ears_ringing.volume_db)
+		ears_ringing.volume_db = remap(clamp(player_clap_acc, 0.0, player_rude_clap_threshold), 0.0, player_rude_clap_threshold, -40.0, -1.0)
 	else:
 		ears_ringing.volume_db = clamp(ears_ringing.volume_db - (delta * 0.1), -40.0, 0.0)
 	
@@ -179,7 +180,7 @@ func _process(delta):
 #			print("Angry 138")
 			mouth_anim.travel("Idle")
 			head_anim.travel("Angry")
-			ears_ringing.volume_db = 0.0			
+			ears_ringing.volume_db = -1.0			
 			ears_ringing.play()
 			heavy_breathing.stop()
 			player.kill() 
@@ -229,7 +230,7 @@ func _process(delta):
 #		print("Angry 131")
 		mouth_anim.travel("Idle")
 		head_anim.travel("Angry")
-		ears_ringing.volume_db = 0.0
+		ears_ringing.volume_db = -1.0
 		ears_ringing.play()
 		heavy_breathing.stop()
 		player.kill()
