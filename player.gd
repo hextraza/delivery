@@ -55,8 +55,6 @@ func _process(delta):
 		bus_db -= delta
 		AudioServer.set_bus_volume_db(bus_db, 0)
 		
-		print(bus_db)
-		
 		if bus_db < -5.0:
 			get_tree().change_scene_to_file("res://ded.tscn")
 		return

@@ -202,7 +202,8 @@ func _process(delta):
 			context["difficulty_mod"] = random.randf_range(0.8, 1.2)
 
 	if current_line >= num_lines:
-		pass #win I guess
+		await Fade.fade_out(5.0).finished
+		get_tree().change_scene_to_file("res://win.tscn")
 		
 func play_next_sound(context, step):
 	if random.randf() < 0.1:
