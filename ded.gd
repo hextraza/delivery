@@ -1,4 +1,4 @@
-extends Node2D
+extends MarginContainer
 
 func _ready():
 	await Fade.fade_in(7.0).finished
