@@ -10,13 +10,18 @@ script = ExtResource("1_l5bm3")
 [node name="sign2" parent="." instance=ExtResource("2_8t7lg")]
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(0.00555336, 0.795454, -0.605988, 0.00423056, 0.605974, 0.795474, 0.999976, -0.00698123, -2.64886e-08, -2.98631, 5.25849, 0)
-light_color = Color(0.00784314, 1, 0.0235294, 1)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 0.0228274, 4.73572)
+visible = false
 light_energy = 1000.0
 light_size = 10.0
-spot_range = 15.0
-spot_angle = 50.0
+spot_range = 44.898
+spot_angle = 76.25
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_a1i0v")
-volume_db = 3.0
+volume_db = 50.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.113817)
+text = "APPLAUSE"
+font_size = 72
