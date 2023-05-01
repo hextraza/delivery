@@ -31,6 +31,7 @@ var audio_emitter: AudioStreamPlayer3D = get_node("AudioStreamPlayer3D")
 @onready var eye_left := $eye_left as Node3D
 @onready var animation_tree := $beak/AnimationTree as AnimationTree
 @onready var animation := $beak/AnimationTree.get("parameters/playback") as AnimationNodeStateMachinePlayback
+@onready var bass_stare := $bass_stare as AudioStreamPlayer3D
 
 var clapping = false
 var clap_speed = 0.0
@@ -40,6 +41,7 @@ var clap_intensity = 1
 var num_claps = 0
 var clap_length = 0.0
 var clap_len_acc = 0.0
+var bass_sound_mutex = false
 
 @onready var look_target := speaker
 @onready var look_actual := speaker.global_position
@@ -56,6 +58,7 @@ func _ready():
 	eye_left.global_position = left_position
 	beak_head.look_at(speaker.global_position)
 	animation.travel("Idle")
+	bass_stare.pitch_scale = random.randf_range(0.5, 1.5)
 
 func _process(delta):
 	look_actual = lerp(look_actual, look_target.global_position, 2.0 * delta)
@@ -142,5 +145,10 @@ func get_clap_stream():
 			
 func stare_at_target(target: Node3D, time: float):
 	look_target = target
-	await get_tree().create_timer(time).timeout
-	look_target = speaker
+	if bass_sound_mutex == false:
+		bass_stare.play()
+		bass_sound_mutex = true
+		await get_tree().create_timer(time).timeout
+		bass_stare.stop()
+		look_target = speaker
+		bass_sound_mutex = false

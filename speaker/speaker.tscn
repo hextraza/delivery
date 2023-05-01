@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://speaker/speaker.gd" id="1_w7jyf"]
 [ext_resource type="PackedScene" uid="uid://nbbajm85fy5o" path="res://speaker/speaker_source.tscn" id="2_cxw63"]
-[ext_resource type="AudioStream" uid="uid://m4lty86ulv5c" path="res://Ear Ringing.wav" id="3_lort4"]
+[ext_resource type="AudioStream" uid="uid://barm238w4py6k" path="res://Heartbeat Loop.wav" id="3_v14pc"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_w7jyf")
@@ -13,7 +13,7 @@ transform = Transform3D(-3, 1.04636e-15, -4.52987e-07, 1.04636e-15, 3, -1.04636e
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="EarsRinging" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_lort4")
+stream = ExtResource("3_v14pc")
 volume_db = 1.0
 
 [node name="HeavyBreathing" type="AudioStreamPlayer" parent="."]

@@ -51,7 +51,7 @@ var dead = false
 var bus_db = 0.0
 
 func _process(delta):
-	print(hand_health)
+#	print(hand_health)
 	
 	if dead:
 		bus_db -= delta

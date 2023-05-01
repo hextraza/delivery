@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyhxsu4ceh6b7"]
+[gd_scene load_steps=7 format=3 uid="uid://dyhxsu4ceh6b7"]
 
 [ext_resource type="Script" path="res://beak/beak.gd" id="1_l8y12"]
 [ext_resource type="PackedScene" uid="uid://chdq6pmdok2fg" path="res://chair.glb" id="1_nr7sw"]
 [ext_resource type="PackedScene" uid="uid://mch8lmv3kau8" path="res://beak/beak_source.tscn" id="3_qsc65"]
+[ext_resource type="AudioStream" uid="uid://cqtba7bgcwcnn" path="res://Bass Stare Tone.wav" id="4_mrrc7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qjedc"]
 radius = 0.01
@@ -42,3 +43,7 @@ max_distance = 20.0
 panning_strength = 1.5
 
 [node name="beak" parent="." instance=ExtResource("3_qsc65")]
+
+[node name="bass_stare" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_mrrc7")
+volume_db = -20.0
