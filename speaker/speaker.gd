@@ -68,7 +68,7 @@ var heavy_breathing := $HeavyBreathing as AudioStreamPlayer
 
 var random = RandomNumberGenerator.new()
 
-var num_lines = 25
+var num_lines = 15
 var current_line = 0
 var step = 0
 var silence = 0.0
@@ -140,7 +140,7 @@ func _process(delta):
 		right_eye.visible = false
 	
 	if player_immune != prior_player_immune && applause_expected == true:
-		print("Player Immune Change: ", player_immune)
+		#print("Player Immune Change: ", player_immune)
 		prior_player_immune = player_immune
 		if player_immune == true:
 			ears_ringing.stop()

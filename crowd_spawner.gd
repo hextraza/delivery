@@ -52,7 +52,7 @@ func _process(delta):
 	speaker_wants_applause = speaker.get_expecting_applause()
 	
 	if player_audio.playing == true:
-		var vel = delta * 0.8 * get_clap_intensity_modifier(controls.get_clap_strength())
+		var vel = delta * 0.9 * get_clap_intensity_modifier(controls.get_clap_strength())
 		
 		if vel != 0.0:
 			delta_intensity_reset_acc = 0.0
@@ -118,7 +118,7 @@ func partition_beaks(num_hunting_beaks):
 func get_clap_intensity_modifier(value):
 	match value:
 		0.0: return 0.0
-		0.25: return 0.4
-		0.5: return 0.5
-		0.75: return 1
+		0.25: return 0.3
+		0.5: return 0.65
+		0.75: return 0.75
 		1.0: return 1.5

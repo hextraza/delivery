@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://djrv1nysx1fcw"]
+[gd_scene load_steps=3 format=3 uid="uid://btaxvj1yl74e"]
 
 [ext_resource type="Script" path="res://win.gd" id="1_dtj5p"]
-[ext_resource type="LabelSettings" uid="uid://dw3rypkwxfxje" path="res://ui label.tres" id="2_yogph"]
+[ext_resource type="LabelSettings" path="res://ui label.tres" id="2_yogph"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 8
