@@ -106,14 +106,14 @@ func _ready():
 func set_clap_thresholds(level):
 	match level:
 		0:
-			player_rude_clap_threshold = 1.0 * context["difficulty_mod"]
-			player_expected_clap_threshold = 3.0 * context["difficulty_mod"]
-		1:
 			player_rude_clap_threshold = 1.3 * context["difficulty_mod"]
-			player_expected_clap_threshold = 2.5 * context["difficulty_mod"]
-		2:
+			player_expected_clap_threshold = 3.5 * context["difficulty_mod"]
+		1:
 			player_rude_clap_threshold = 1.5 * context["difficulty_mod"]
-			player_expected_clap_threshold = 2.0 * context["difficulty_mod"]
+			player_expected_clap_threshold = 3.0 * context["difficulty_mod"]
+		2:
+			player_rude_clap_threshold = 1.7 * context["difficulty_mod"]
+			player_expected_clap_threshold = 2.7 * context["difficulty_mod"]
 
 func _process(delta):
 	if silence > 0.0:
@@ -163,7 +163,6 @@ func _process(delta):
 	print("player_rude_clap_threshold: ", player_rude_clap_threshold)
 	print("player_acc: ", player_clap_acc)
 	print("player_immune: ", player_immune, "\n")
-	print("Modded clap threshold: ", silence_length / player_expected_clap_threshold * context["difficulty_mod"])
 		
 	if player_audio.playing == true:
 		player_clap_acc += delta * get_clap_intensity_modifier(controls.get_clap_strength())
@@ -223,7 +222,7 @@ func _process(delta):
 			context["tempo"] = random.randf_range(0.9, 1.2)
 			context["difficulty_mod"] = random.randf_range(0.8, 1.2)
 
-	if applause_expected && player_clap_acc >= (silence_length / player_expected_clap_threshold * context["difficulty_mod"]):
+	if applause_expected && player_clap_acc >= player_expected_clap_threshold:
 		head_anim.travel("Idle")
 		player_immune = true
 	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold && !player.dead:
