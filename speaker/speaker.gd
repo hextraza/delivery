@@ -52,6 +52,20 @@ var right_eye = $speaker/eye_right as Node3D
 @onready
 var left_eye = $speaker/eye_left as Node3D
 
+@onready
+var breathing_samples := [
+	preload("res://Whispers and Breathing/Heavy Breathing 1.wav"),
+	preload("res://Whispers and Breathing/Heavy Breathing 2.wav"),
+	preload("res://Whispers and Breathing/Heavy Breathing 3.wav"),
+	preload("res://Whispers and Breathing/Heavy Breathing 4.wav")
+]
+
+@onready
+var ears_ringing := $EarsRinging as AudioStreamPlayer
+
+@onready
+var heavy_breathing := $HeavyBreathing as AudioStreamPlayer
+
 var random = RandomNumberGenerator.new()
 
 var num_lines = 25
@@ -70,6 +84,8 @@ var silence_length = 0.0
 var angry = false
 var look_target: Vector3
 var look_actual: Vector3
+var prior_heavy_breathing_sample := 0
+var stop_ringing := false
 
 var context = {
 	"baseline": 0,
@@ -105,6 +121,12 @@ func _process(delta):
 	else:
 		silence = 0.0
 		silence_length = 0.0
+		
+	if stop_ringing:
+		if ears_ringing.volume_db < -40.0:
+			ears_ringing.stop()
+		else:
+			ears_ringing.volume_db -= delta * 0.1
 	
 	var scale_amount = remap(player_clap_acc, 0.0, player_expected_clap_threshold, 0.1, 2.0)
 	right_eye.scale = Vector3(scale_amount, scale_amount, scale_amount)
@@ -112,9 +134,22 @@ func _process(delta):
 	
 	look_actual = lerp(look_actual, look_target, 4.0 * delta)
 	speaker.look_at(look_actual)
-		
+	
+	var new_sample = floor(remap(clamp(player_clap_acc, 0.0, player_rude_clap_threshold), 0.0, player_rude_clap_threshold, 0.0, 3.9))
+	if new_sample != prior_heavy_breathing_sample:
+		prior_heavy_breathing_sample = new_sample
+		heavy_breathing.stream = breathing_samples[new_sample]
+		heavy_breathing.play()
+	
+	heavy_breathing.volume_db = remap(player_clap_acc, 0.0, player_rude_clap_threshold, 1.0, 6.0)
+	if angry == true:
+		ears_ringing.volume_db = remap(player_clap_acc, 0.0, player_rude_clap_threshold, -40.0, 0.0)
+	else:
+		ears_ringing.volume_db = clamp(ears_ringing.volume_db - (delta * 0.1), -40.0, 0.0)
+	
 	# Stare at player if they are approaching the rude threshold
 	if player_clap_acc > (player_rude_clap_threshold * 0.5) && !applause_expected && angry == false:
+		ears_ringing.play()
 #		print("Anger and look at player 101")
 		head_anim.travel("Anger")
 #		print("change look target 109")
@@ -136,38 +171,23 @@ func _process(delta):
 		player_reset_acc += delta
 		
 		if player_reset_acc > player_reset_threshold && !player_immune:
-			player_clap_acc = 0.0
-			player_reset_acc = 0.0
-			if angry == true:
-				angry = false
-				if applause_expected:
-#					print("Idle 122")
-					head_anim.travel("Idle")
-#					print("change look target 133")
-					change_look_target(player.global_position)
-				else:
-#					print("Idle 139")
-					head_anim.travel("Idle")
-#					print("change look target 141")
-					change_look_target(to_global(-Vector3.FORWARD))
+			reset_clap_accumulator()
 	
-	if applause_expected && player_clap_acc >= (silence_length / player_expected_clap_threshold * context["difficulty_mod"]):
-		head_anim.travel("Idle")
-		player_immune = true
-	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold:
-#		print("Angry 131")
-		mouth_anim.travel("Idle")
-		head_anim.travel("Angry")
-		player.kill()
 	
 	if !audio_emitter.playing && silence <= 0.0:
-		if applause_expected && !player_immune:
+		if applause_expected && !player_immune && !player.dead:
 #			print("Angry 138")
 			mouth_anim.travel("Idle")
 			head_anim.travel("Angry")
-			player.kill()
+			ears_ringing.volume_db = 0.0			
+			ears_ringing.play()
+			heavy_breathing.stop()
+			player.kill() 
+			await get_tree().create_timer(4.0).timeout
+			stop_ringing = true
+#			ears_ringing.stop()
 		elif applause_expected:
-			player_clap_acc = 0.0
+			reset_clap_accumulator()
 			
 		if step == 0:
 #			print("IdleTalking 146")
@@ -178,6 +198,7 @@ func _process(delta):
 		
 		player_immune = false
 		applause_expected = false
+
 		var result = play_next_sound(context, step)
 		var line_finished = result[0]
 		var step_diff = result[1]
@@ -200,6 +221,21 @@ func _process(delta):
 			context["length"] = random.randi_range(10, 25)
 			context["tempo"] = random.randf_range(0.9, 1.2)
 			context["difficulty_mod"] = random.randf_range(0.8, 1.2)
+
+	if applause_expected && player_clap_acc >= (silence_length / player_expected_clap_threshold * context["difficulty_mod"]):
+		head_anim.travel("Idle")
+		player_immune = true
+	elif !applause_expected && player_clap_acc >= player_rude_clap_threshold && !player.dead:
+#		print("Angry 131")
+		mouth_anim.travel("Idle")
+		head_anim.travel("Angry")
+		ears_ringing.volume_db = 0.0
+		ears_ringing.play()
+		heavy_breathing.stop()
+		player.kill()
+		await get_tree().create_timer(4.0).timeout
+		stop_ringing = true
+#		ears_ringing.stop()
 
 	if current_line >= num_lines:
 		await Fade.fade_out(5.0).finished
@@ -301,3 +337,20 @@ func get_silence_length():
 func change_look_target(target: Vector3):
 #	print("Target changed: ", target)
 	look_target = target
+	
+func reset_clap_accumulator():
+	player_clap_acc = 0.0
+	player_reset_acc = 0.0
+	if angry == true:
+		angry = false
+		ears_ringing.stop()
+		if applause_expected:
+#			print("Idle 122")
+			head_anim.travel("Idle")
+#			print("change look target 133")
+			change_look_target(player.global_position)
+		else:
+#			print("Idle 139")
+			head_anim.travel("Idle")
+#			print("change look target 141")
+			change_look_target(to_global(-Vector3.FORWARD))
